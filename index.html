@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="BXFeOpIIANb9r4f9pk23dGheMgLdwfYV752r-j9QCbo" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNQ750PL7S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YNQ750PL7S');
+  </script>
   <title>AI Office Company — AI Offices for Small Businesses in New Orleans</title>
   <meta name="description" content="AI Office Company creates AI Offices for small businesses in New Orleans. Get analytics, advice, and automated tasks — all under your supervision." />
 
@@ -165,7 +173,7 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: white;
       margin-bottom: 20px;
       background: rgba(45, 142, 255, 0.1);
       padding: 6px 14px;
@@ -218,131 +226,203 @@
     }
 
     /* ============================================================
+       PAIN POINTS
+    ============================================================ */
+    #pain-points {
+      background: var(--bg-secondary);
+      padding: 88px 0;
+    }
+
+    .pain-points-header {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .pain-points-kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .pain-points-heading {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      color: var(--text-primary);
+      font-size: 2.75rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .pain-points-heading span {
+      color: var(--accent-hover);
+    }
+
+    .pain-points-intro {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .pain-points-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: 12px;
+    }
+
+    .pain-point {
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+    }
+
+    .pain-point:nth-child(4n + 1),
+    .pain-point:nth-child(4n + 4) {
+      background: #12243D;
+    }
+
+    .pain-point:nth-child(4n + 2),
+    .pain-point:nth-child(4n + 3) {
+      background: #19314D;
+    }
+
+    .pain-point:hover {
+      border-color: rgba(79, 163, 255, 0.55);
+    }
+
+    .pain-point summary {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 18px 20px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .pain-point summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .pain-point summary:focus-visible {
+      outline: 2px solid var(--accent-hover);
+      outline-offset: -3px;
+    }
+
+    .pain-problem {
+      color: var(--text-primary);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .pain-reveal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--accent-hover);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .pain-chevron {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+
+    .pain-point[open] .pain-chevron {
+      transform: rotate(225deg);
+    }
+
+    .pain-detail {
+      padding: 0 20px 18px;
+      border-top: 1px solid rgba(160, 180, 204, 0.18);
+    }
+
+    .pain-outcome {
+      display: block;
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .pain-explanation {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-top: 14px;
+    }
+
+    /* ============================================================
        WHAT IS AI OFFICE
     ============================================================ */
     #what-is {
-      background: var(--bg-secondary);
+      background: var(--bg-primary);
       padding: 96px 0;
     }
 
     .what-is-header {
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto 56px;
+      max-width: 860px;
+      margin: 0 auto 64px;
+    }
+
+    .what-is-kicker,
+    .cards-kicker {
+      color: var(--accent-hover);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .what-is-kicker {
+      margin-bottom: 14px;
+    }
+
+    .what-is-heading {
+      max-width: 840px;
+      margin: 0 auto;
+      font-size: 2.35rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .what-is-heading span {
+      color: var(--accent-hover);
     }
 
     .what-is-header .section-sub {
       margin: 16px auto 0;
     }
 
-    /* Three-column components grid */
-    .components-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-
-    .component-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 28px 24px;
-      text-align: center;
-      transition: box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .component-card:hover {
-      box-shadow: 0 0 28px rgba(45, 142, 255, 0.18);
-      border-color: rgba(45, 142, 255, 0.4);
-    }
-
-    .component-icon {
-      width: 52px;
-      height: 52px;
-      margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(45, 142, 255, 0.12);
-      border-radius: 12px;
-    }
-
-    .component-icon svg {
-      width: 28px;
-      height: 28px;
-      color: var(--accent);
-    }
-
-    .component-label {
-      font-weight: 600;
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
-
-    .component-desc {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Two-column terms grid */
-    .terms-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .term-card {
-      background: rgba(45, 142, 255, 0.06);
-      border: 1px solid rgba(45, 142, 255, 0.2);
-      border-radius: 12px;
-      padding: 24px;
-      display: flex;
-      gap: 16px;
-    }
-
-    .term-icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      background: rgba(45, 142, 255, 0.15);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .term-icon svg {
-      width: 20px;
-      height: 20px;
-      color: var(--accent);
-    }
-
-    .term-label {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-
-    .term-desc {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
     /* ============================================================
        COMPONENT CARDS (Interactive)
     ============================================================ */
-    #components {
-      padding: 96px 0;
-    }
-
     .cards-header {
       text-align: center;
-      margin-bottom: 52px;
+      margin-bottom: 40px;
+    }
+
+    .cards-kicker {
+      margin-bottom: 8px;
+    }
+
+    .cards-header .section-heading {
+      font-size: 1.85rem;
+      line-height: 1.25;
+      margin-bottom: 0;
     }
 
     .cards-grid {
@@ -368,6 +448,16 @@
       transform: translateY(-3px);
     }
 
+    .info-card-coming-soon {
+      cursor: default;
+    }
+
+    .info-card-coming-soon:hover {
+      box-shadow: none;
+      border-color: var(--card-border);
+      transform: none;
+    }
+
     .info-card-icon {
       width: 56px;
       height: 56px;
@@ -389,6 +479,31 @@
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 10px;
+    }
+
+    .info-card-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .info-card-title-row .info-card-title {
+      margin-bottom: 0;
+    }
+
+    .coming-soon-badge {
+      flex-shrink: 0;
+      padding: 4px 8px;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      border-radius: 999px;
+      background: rgba(201, 168, 76, 0.12);
+      color: #C9A84C;
+      font-size: 0.7rem;
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
     .info-card-teaser {
@@ -606,22 +721,22 @@
 
     .how-steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin: 52px 0 48px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      margin: 48px 0 24px;
       position: relative;
     }
 
-    /* Connector line between steps */
     .how-steps::before {
       content: '';
       position: absolute;
-      top: 28px;
-      left: calc(16.66% + 12px);
-      right: calc(16.66% + 12px);
+      top: 24px;
+      left: calc(12.5% + 24px);
+      right: calc(12.5% + 24px);
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
       opacity: 0.35;
+      pointer-events: none;
     }
 
     .step {
@@ -629,43 +744,67 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 14px;
       text-align: center;
     }
 
-    .step-number {
-      width: 56px;
-      height: 56px;
+    .step-copy {
+      display: grid;
+      gap: 6px;
+      max-width: 250px;
+    }
+
+    .step-icon {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
       background: rgba(45, 142, 255, 0.12);
       border: 1px solid rgba(45, 142, 255, 0.3);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin-bottom: 20px;
       position: relative;
       z-index: 1;
       background: var(--bg-secondary);
     }
 
+    .step-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
+    }
+
     .step-title {
       font-weight: 600;
-      font-size: 1.05rem;
-      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.45;
     }
 
     .step-desc {
-      font-size: 0.9rem;
       color: var(--text-secondary);
-      line-height: 1.65;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .how-summary {
+      margin: 0 auto 40px;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .how-note {
+      margin-top: 16px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
     }
 
     /* ============================================================
        TRUST SECTION
     ============================================================ */
     #trust {
+      background: var(--bg-primary);
       padding: 96px 0;
     }
 
@@ -848,30 +987,21 @@
        RESPONSIVE
     ============================================================ */
     @media (max-width: 900px) {
-      .components-grid,
-      .cards-grid,
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cards-grid .info-card-coming-soon {
+        grid-column: 1 / -1;
+      }
+
       .how-steps {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 16px;
       }
 
       .how-steps::before {
         display: none;
-      }
-
-      .step {
-        flex-direction: row;
-        text-align: left;
-        gap: 16px;
-        align-items: flex-start;
-      }
-
-      .step-number {
-        margin-bottom: 0;
-        flex-shrink: 0;
-      }
-
-      .terms-grid {
-        grid-template-columns: 1fr;
       }
 
       .trust-grid {
@@ -880,6 +1010,10 @@
     }
 
     @media (max-width: 600px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero-cta-group {
         align-items: stretch;
       }
@@ -899,6 +1033,47 @@
       .modal-footer {
         padding: 12px 20px 16px;
       }
+
+      #pain-points {
+        padding: 64px 0;
+      }
+
+      .what-is-header {
+        margin-bottom: 48px;
+      }
+
+      .what-is-heading {
+        font-size: 1.8rem;
+      }
+
+      .cards-header .section-heading {
+        font-size: 1.55rem;
+      }
+
+      .pain-points-heading {
+        font-size: 2rem;
+      }
+
+      .pain-points-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .pain-point:nth-child(n) {
+        background: #12243D;
+      }
+
+      .pain-point:nth-child(even) {
+        background: #19314D;
+      }
+
+      .pain-point summary {
+        padding: 16px 18px;
+      }
+
+      .pain-detail {
+        padding: 0 18px 16px;
+      }
     }
   </style>
 </head>
@@ -911,7 +1086,7 @@
     <div class="container">
       <div class="nav-inner">
         <a href="#" class="nav-logo">AI Office Company</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform?usp=publish-editor"
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
            class="btn nav-cta"
            target="_blank"
            rel="noopener noreferrer">
@@ -928,25 +1103,117 @@
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="container">
       <div class="hero-content">
-        <span class="hero-eyebrow">Reimagining your office</span>
+        <span class="hero-eyebrow">Ever had this experience?</span>
         <h1 class="hero-headline">
-          Your business,<br />running itself.<br />
-          <em><i>Under your supervision.</i></em>
+          You worked a full day and only billed <em> half of it.</em>
         </h1>
         <p class="hero-sub">
-          Let AI Office Company create your virtual office: <br>
-          Get important analytics and marketing advice,
-          all while getting the repetitive tasks done automatically. You always stay in control.
+          What if the other half of your day went to billable work? <br>AI Office puts agents to work on everything else.
         </p>
         <div class="hero-cta-group">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform?usp=publish-editor"
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
              class="btn"
              target="_blank"
              rel="noopener noreferrer">
-            Schedule a Free Conversation
+            See How It Works
           </a>
           <span class="hero-supporting">No technical knowledge required</span>
         </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAIN POINTS
+  ============================================================ -->
+  <section id="pain-points" aria-labelledby="pain-points-heading">
+    <div class="container">
+      <div class="pain-points-header">
+        <h2 id="pain-points-heading" class="section-heading pain-points-heading">Do you have <span>this problem?</span></h2>
+      </div>
+      <div class="pain-points-list">
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">Information keeps getting lost in your office</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation"><strong>Agents</strong> capture incoming information, send it to the Vault and make sure it's handled.</span>
+            <strong class="pain-outcome">Nothing slips through again.</strong>
+          </div>
+        </details>
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">AI gives you generic or unreliable answers</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation">The <strong>Vault</strong> holds everything your firm knows, plus the instructions your AI follows. Every agent knows what it's working with and exactly how your firm wants it done.</span>
+            <strong class="pain-outcome">Get answers that fit your firm.</strong>
+          </div>
+        </details>
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">Important emails buried in piles</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation">The <strong>Email Agent</strong> sorts your inbox, flags what matters and drafts the replies.</span>
+            <strong class="pain-outcome">See only what needs you.</strong>
+          </div>
+        </details>
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">You missed an important deadline</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation">The <strong>Case Manager</strong> tracks every deadline and flags it early.</span>
+            <strong class="pain-outcome">Never miss a date.</strong>
+          </div>
+        </details>
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">You wait until the accountant shows you financial reports</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation">The <strong>Cashflow Manager</strong> shows what's coming in and what's overdue, and reports on the whole month.</span>
+            <strong class="pain-outcome">Know where your money stands.</strong>
+          </div>
+        </details>
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">Your social pages are a complete ghost town</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation">The <strong>Social Media Marketing Manager</strong> writes and schedules posts for your approval.</span>
+            <strong class="pain-outcome">Stay visible without writing a caption.</strong>
+          </div>
+        </details>
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">Your Google profile looks outdated and you haven't touched it in years</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation">The <strong>Google Business Listing Promotion Agent</strong> keeps your profile fresh</span>
+            <strong class="pain-outcome">Get found first.</strong>
+          </div>
+        </details>
+        <details class="pain-point">
+          <summary>
+            <span class="pain-problem">Your firm has more work than hours, and you're paying a lot of staff just to keep up</span>
+            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+          </summary>
+          <div class="pain-detail">
+            <span class="pain-explanation">Your AI Office agents take over the repetitive work your staff is stretched thin on.</span>
+            <strong class="pain-outcome">Grow without adding headcount.</strong>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -957,105 +1224,14 @@
   <section id="what-is" aria-labelledby="what-is-heading">
     <div class="container">
       <div class="what-is-header">
-        <h2 id="what-is-heading" class="section-heading">
-          AI Office is your virtual office space where AI Agents do their work.<br />
-          A human operator always supervises.
+        <p class="what-is-kicker">A human-supervised AI office</p>
+        <h2 id="what-is-heading" class="section-heading what-is-heading">
+          AI Office is your <span>virtual office space</span> where our Agents do their work.
         </h2>
-        <p class="section-sub">We create it. We configure it. We train your team. You run your business.</p>
       </div>
-
-      <!-- Three components -->
-      <div class="components-grid" role="list">
-
-        <!-- The Vault -->
-        <div class="component-card" role="listitem">
-          <div class="component-icon" aria-hidden="true">
-            <!-- Lock / vault icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              <circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <div class="component-label">The Vault</div>
-          <div class="component-desc">Everything about your business, organized and verified</div>
-        </div>
-
-        <!-- Analytics Desk -->
-        <div class="component-card" role="listitem">
-          <div class="component-icon" aria-hidden="true">
-            <!-- Chart / analytics icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"/>
-              <line x1="12" y1="20" x2="12" y2="4"/>
-              <line x1="6" y1="20" x2="6" y2="14"/>
-              <line x1="2" y1="20" x2="22" y2="20"/>
-            </svg>
-          </div>
-          <div class="component-label">Analytics Desk</div>
-          <div class="component-desc">Analysis and advice when you need it</div>
-        </div>
-
-        <!-- Operations Desk -->
-        <div class="component-card" role="listitem">
-          <div class="component-icon" aria-hidden="true">
-            <!-- Workflow / cog icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.07 4.93A10 10 0 0 0 4.93 19.07M4.93 4.93A10 10 0 0 1 19.07 19.07"/>
-              <path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
-            </svg>
-          </div>
-          <div class="component-label">Operations Desk</div>
-          <div class="component-desc">Tasks completed automatically, on schedule</div>
-        </div>
-      </div>
-
-      <!-- Two key terms -->
-      <div class="terms-grid" role="list">
-        <div class="term-card" role="listitem">
-          <div class="term-icon" aria-hidden="true">
-            <!-- Script / scenario icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="9" y1="13" x2="15" y2="13"/>
-              <line x1="9" y1="17" x2="13" y2="17"/>
-            </svg>
-          </div>
-          <div>
-            <div class="term-label">Scenario</div>
-            <div class="term-desc">The pre-determined scripts that help you analyze your business and make decisions</div>
-          </div>
-        </div>
-        <div class="term-card" role="listitem">
-          <div class="term-icon" aria-hidden="true">
-            <!-- Workflow / steps icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="6" height="6" rx="1"/>
-              <rect x="16" y="3" width="6" height="6" rx="1"/>
-              <rect x="9" y="15" width="6" height="6" rx="1"/>
-              <path d="M5 9v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/>
-              <line x1="12" y1="13" x2="12" y2="15"/>
-            </svg>
-          </div>
-          <div>
-            <div class="term-label">Workflow</div>
-            <div class="term-desc">The pre-determined sequence of events that AI uses to complete tasks</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       INTERACTIVE COMPONENT CARDS
-  ============================================================ -->
-  <section id="components" aria-labelledby="components-heading">
-    <div class="container">
+      <div id="components" aria-labelledby="components-heading">
       <div class="cards-header">
-        <h2 id="components-heading" class="section-heading">The three parts of your AI Office</h2>
-        <p class="section-sub" style="margin: 12px auto 0;">Tap any card to learn more.</p>
+        <h3 id="components-heading" class="section-heading">What's inside your AI Office?</h3>
       </div>
 
       <div class="cards-grid">
@@ -1071,7 +1247,7 @@
           </div>
           <div class="info-card-title">The Vault</div>
           <div class="info-card-teaser">
-            The foundation of everything. Your verified business content, processes, and knowledge — organized and ready for AI to work from.
+            The foundation of everything. Everything your firm knows, in one place.
           </div>
           <button class="info-card-learn" aria-label="Learn more about The Vault">
             Learn more
@@ -1082,19 +1258,17 @@
           </button>
         </article>
 
-        <!-- Card 2: Analytics Desk -->
+        <!-- Card 2: AI Agents -->
         <article class="info-card" role="button" tabindex="0" aria-label="Learn more about the Analytics Desk" data-modal="modal-analytics">
           <div class="info-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"/>
-              <line x1="12" y1="20" x2="12" y2="4"/>
-              <line x1="6" y1="20" x2="6" y2="14"/>
-              <line x1="2" y1="20" x2="22" y2="20"/>
+              <circle cx="12" cy="7" r="3"/>
+              <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
             </svg>
           </div>
-          <div class="info-card-title">Analytics Desk</div>
+          <div class="info-card-title">AI Agents</div>
           <div class="info-card-teaser">
-            Your AI Advisor. Get real analysis and recommendations based on your actual business data — when you need to decide, not just when reports are scheduled.
+            Each agent has one job. They work from your Vault and send nothing out without your approval.
           </div>
           <button class="info-card-learn" aria-label="Learn more about the Analytics Desk">
             Learn more
@@ -1105,27 +1279,24 @@
           </button>
         </article>
 
-        <!-- Card 3: Operations Desk -->
-        <article class="info-card" role="button" tabindex="0" aria-label="Learn more about the Operations Desk" data-modal="modal-operations">
+        <!-- Ousia teaser -->
+        <article class="info-card info-card-coming-soon" aria-labelledby="ousia-card-title">
           <div class="info-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              <path d="M3 5c0-1.7 4-3 9-3s9 1.3 9 3v14c0 1.7-4 3-9 3s-9-1.3-9-3z"/>
+              <path d="M3 5c0 1.7 4 3 9 3s9-1.3 9-3M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/>
             </svg>
           </div>
-          <div class="info-card-title">Operations Desk</div>
+          <div class="info-card-title-row">
+            <div class="info-card-title" id="ousia-card-title">Ousia</div>
+            <span class="coming-soon-badge">Coming soon</span>
+          </div>
           <div class="info-card-teaser">
-            Your AI SuperManager. Workflows run automatically, connected to your existing tools — every action pauses for your approval before anything goes out.
+            Our AI-native case management database built for law firms. Every case, client and detail lives in one place your whole firm can reach.
           </div>
-          <button class="info-card-learn" aria-label="Learn more about the Operations Desk">
-            Learn more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
         </article>
 
+      </div>
       </div>
     </div>
   </section>
@@ -1195,11 +1366,11 @@
     </div>
   </div>
 
-  <!-- Modal: Analytics Desk -->
+  <!-- Modal: The Agents -->
   <div id="modal-analytics" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-analytics-title">
     <div class="modal-box">
       <div class="modal-header">
-        <span id="modal-analytics-title" class="modal-title">Analytics Desk</span>
+        <span id="modal-analytics-title" class="modal-title">The Agents</span>
         <button class="modal-close" aria-label="Close">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
@@ -1208,95 +1379,24 @@
       </div>
       <div class="modal-slides">
         <div class="modal-slide active">
-          <div class="slide-number">01 / 03</div>
-          <h3 class="slide-heading">The Analytics Desk is where you get <em>advice on your business.</em></h3>
+          <div class="slide-number">01 / 02</div>
+          <h3 class="slide-heading">Most AI tools are built for everyone. </h3>
           <p class="slide-body">
-            Powered by the AI Advisor, it gives you analysis and recommendations
-            based on your real business data.
+            Ours are built for law firms, and trained on yours. That's what takes the non-billable work off your desk.
           </p>
         </div>
         <div class="modal-slide">
-          <div class="slide-number">02 / 03</div>
-          <h3 class="slide-heading">What is a <em>Scenario?</em></h3>
+          <div class="slide-number">02 / 02</div>
+          <h3 class="slide-heading">What is an <em>Agent?</em></h3>
           <p class="slide-body">
-            A Scenario is a pre-determined script that analyzes a specific part of your business and tells you what it means.
-            Your AI Office Company configures Scenarios for your business specifically.
-          </p>
-        </div>
-        <div class="modal-slide">
-          <div class="slide-number">03 / 03</div>
-          <h3 class="slide-heading">Who uses it?</h3>
-          <p class="slide-body">
-            The business owner and managers. When you need to understand a number, think through a decision,
-            or prepare for a conversation — the Analytics Desk is where you go.
+            An agent is an AI assistant trained for one specific job, like sorting email, tracking deadlines or updating clients.
+            It follows a set routine, works from your Vault, and stops for your approval.
           </p>
         </div>
       </div>
       <div class="modal-footer">
         <div class="modal-dots">
           <div class="modal-dot active"></div>
-          <div class="modal-dot"></div>
-          <div class="modal-dot"></div>
-        </div>
-        <div class="modal-nav">
-          <button class="modal-nav-btn modal-prev" aria-label="Previous slide" disabled>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"/>
-              <polyline points="12 19 5 12 12 5"/>
-            </svg>
-          </button>
-          <button class="modal-nav-btn modal-next" aria-label="Next slide">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Operations Desk -->
-  <div id="modal-operations" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-operations-title">
-    <div class="modal-box">
-      <div class="modal-header">
-        <span id="modal-operations-title" class="modal-title">Operations Desk</span>
-        <button class="modal-close" aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
-      </div>
-      <div class="modal-slides">
-        <div class="modal-slide active">
-          <div class="slide-number">01 / 03</div>
-          <h3 class="slide-heading">The Operations Desk is where <em>AI gets the work done.</em></h3>
-          <p class="slide-body">
-            Powered by the AI SuperManager, it runs your Workflows automatically —
-            on schedule, connected to your existing tools.
-          </p>
-        </div>
-        <div class="modal-slide">
-          <div class="slide-number">02 / 03</div>
-          <h3 class="slide-heading">What is a <em>Workflow?</em></h3>
-          <p class="slide-body">
-            A Workflow is a pre-determined sequence of steps that AI follows to complete a task —
-            like following up with a customer, chasing an invoice, or posting on social media.
-          </p>
-        </div>
-        <div class="modal-slide">
-          <div class="slide-number">03 / 03</div>
-          <h3 class="slide-heading">You approve everything.</h3>
-          <p class="slide-body">
-            Nothing goes out without you. Every action pauses for your review.
-            You click approve, edit, or reject. The AI SuperManager handles the rest.
-          </p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div class="modal-dots">
-          <div class="modal-dot active"></div>
-          <div class="modal-dot"></div>
           <div class="modal-dot"></div>
         </div>
         <div class="modal-nav">
@@ -1322,38 +1422,65 @@
   ============================================================ -->
   <section id="how-it-works" aria-labelledby="how-heading">
     <div class="container">
-      <h2 id="how-heading" class="section-heading">We build it. You run it. We keep it running.</h2>
+      <h2 id="how-heading" class="section-heading">How it works</h2>
 
       <div class="how-steps">
         <div class="step">
-          <div class="step-number" aria-hidden="true">1</div>
-          <div>
-            <div class="step-title">We learn your business</div>
-            <div class="step-desc">One conversation. No homework for you. We map out where AI can save you the most time.</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6L15 12l-3-3z"/>
+            </svg>
+          </div>
+          <div class="step-copy">
+            <div class="step-title">1. We build it.</div>
+            <p class="step-desc">One conversation. We map out where AI can save your firm the most time.</p>
           </div>
         </div>
         <div class="step">
-          <div class="step-number" aria-hidden="true">2</div>
-          <div>
-            <div class="step-title">We build your AI Office</div>
-            <div class="step-desc">We configure everything, connect it to your existing tools, and test it before you ever touch it.</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 21v-7m0-4V3m8 18v-9m0-4V3m8 18v-5m0-4V3M2 14h4m4-6h4m4 6h4"/>
+            </svg>
+          </div>
+          <div class="step-copy">
+            <div class="step-title">2. We set it up.</div>
+            <p class="step-desc">We configure everything and test it before you ever touch it.</p>
           </div>
         </div>
         <div class="step">
-          <div class="step-number" aria-hidden="true">3</div>
-          <div>
-            <div class="step-title">Your team takes over</div>
-            <div class="step-desc">We train your staff, hand over clear instructions, and stay on as your ongoing AI management team.</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="8" r="3"/>
+              <path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5.2a3 3 0 0 1 0 5.6M18 15h1a3 3 0 0 1 3 3v3"/>
+            </svg>
+          </div>
+          <div class="step-copy">
+            <div class="step-title">3. We train your team.</div>
+            <p class="step-desc">We train your staff and hand over clear instructions.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="7" width="18" height="14" rx="2"/>
+              <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/>
+            </svg>
+          </div>
+          <div class="step-copy">
+            <div class="step-title">4. You run your business.</div>
+            <p class="step-desc">Your team takes over, or we stay on as your Operator.</p>
           </div>
         </div>
       </div>
 
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform?usp=publish-editor"
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
          class="btn"
          target="_blank"
          rel="noopener noreferrer">
-        Start with a free conversation
+        Start with a FREE conversation
       </a>
+      <p class="how-note">Give us an hour. No tech skills required. No obligation whatsoever.</p>
     </div>
   </section>
 
@@ -1363,7 +1490,7 @@
   <section id="trust" aria-labelledby="trust-heading">
     <div class="container">
       <div class="trust-header">
-        <h2 id="trust-heading" class="section-heading">Why AI Office Company?</h2>
+        <h2 id="trust-heading" class="section-heading">Why Choose AI Office Company?</h2>
       </div>
 
       <div class="trust-grid">
@@ -1433,13 +1560,13 @@
       <h2 id="cta-heading" class="cta-heading">
         Ready to see what an AI Office could look like for your business?
       </h2>
-      <p class="cta-sub">One conversation. No obligation. We will tell you exactly what is possible.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform?usp=publish-editor"
+      <p class="cta-sub">One conversation. We will tell you exactly what is possible.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
          class="btn"
          target="_blank"
          rel="noopener noreferrer"
          style="font-size: 1.1rem; padding: 16px 36px;">
-        Schedule a Free Conversation
+        Book a Free Audit
       </a>
       <p class="cta-note">
         Or email us directly at
@@ -1457,6 +1584,14 @@
         <div class="footer-brand">
           <div class="footer-name">AI Office Company</div>
           <div class="footer-tagline">Creating AI Offices for small businesses in New Orleans.</div>
+          <div class="footer-links">
+            <a href="tel:+15045216997">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.08 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69a2 2 0 0 1 1.74 2.04z"/>
+              </svg>
+              (504) 521-6997
+            </a>
+          </div>
         </div>
         <div class="footer-links">
           <a href="mailto:info@aiofficecompany.com">
@@ -1639,7 +1774,7 @@
       }
 
       // Wire up cards
-      document.querySelectorAll('.info-card').forEach(card => {
+      document.querySelectorAll('.info-card[data-modal]').forEach(card => {
         const modalId = card.dataset.modal;
         function trigger(e) {
           if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
