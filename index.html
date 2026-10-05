@@ -270,14 +270,22 @@
     .pain-points-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: start;
       gap: 12px;
     }
 
     .pain-point {
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
       border: 1px solid var(--card-border);
       border-radius: 8px;
+    }
+
+    @media (min-width: 601px) {
+      .pain-point:has(+ .pain-point[open]),
+      .pain-point[open] + .pain-point {
+        align-self: start;
+      }
     }
 
     .pain-point:nth-child(4n + 1),
@@ -298,6 +306,7 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
+      flex: 1;
       gap: 10px;
       padding: 18px 20px;
       cursor: pointer;
@@ -314,33 +323,36 @@
     }
 
     .pain-problem {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       color: var(--text-primary);
       font-weight: 600;
       line-height: 1.45;
+      text-align: left;
+    }
+
+    .pain-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      color: var(--accent-hover);
+    }
+
+    .pain-problem > span {
+      flex: 1;
     }
 
     .pain-reveal {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
+      margin-top: auto;
       gap: 12px;
       color: var(--accent-hover);
       font-size: 0.85rem;
       font-weight: 600;
-    }
-
-    .pain-chevron {
-      width: 8px;
-      height: 8px;
-      flex: 0 0 8px;
-      border-right: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
-      transform: rotate(45deg);
-      transition: transform 0.2s ease;
-    }
-
-    .pain-point[open] .pain-chevron {
-      transform: rotate(225deg);
     }
 
     .pain-detail {
@@ -1090,7 +1102,7 @@
            class="btn nav-cta"
            target="_blank"
            rel="noopener noreferrer">
-          Schedule a Conversation
+          Book My Free Consultation
         </a>
       </div>
     </div>
@@ -1103,19 +1115,19 @@
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="container">
       <div class="hero-content">
-        <span class="hero-eyebrow">Ever had this experience?</span>
+        <span class="hero-eyebrow">AI OFFICE COMPANY</span>
         <h1 class="hero-headline">
-          You worked a full day and only billed <em> half of it.</em>
+          Your business,<br />running itself.<br />
+          <em>Under your supervision.</em>
         </h1>
         <p class="hero-sub">
-          What if the other half of your day went to billable work? <br>AI Office puts agents to work on everything else.
+          Let us create your AI Office: get important analytics, track deadlines, handle social media
+          and get the repetitive tasks done automatically. You always stay in control.
         </p>
         <div class="hero-cta-group">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
-             class="btn"
-             target="_blank"
-             rel="noopener noreferrer">
-            See How It Works
+          <a href="#pain-points"
+             class="btn">
+            Problems We Solve
           </a>
           <span class="hero-supporting">No technical knowledge required</span>
         </div>
@@ -1136,58 +1148,48 @@
       <div class="pain-points-list">
         <details class="pain-point">
           <summary>
-            <span class="pain-problem">Information keeps getting lost in your office</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3h.5a8.5 8.5 0 0 1 8 8z"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-.9.9-1.9 1.2-1.9 2.7"/><path d="M12 17h.01"/></svg><span>AI gives generic, unreliable answers</span></span>
+            <span class="pain-reveal">How we solve it ⤵</span>
           </summary>
           <div class="pain-detail">
-            <span class="pain-explanation"><strong>Agents</strong> capture incoming information, send it to the Vault and make sure it's handled.</span>
-            <strong class="pain-outcome">Nothing slips through again.</strong>
-          </div>
-        </details>
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem">AI gives you generic or unreliable answers</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Vault</strong> holds everything your firm knows, plus the instructions your AI follows. Every agent knows what it's working with and exactly how your firm wants it done.</span>
+            <span class="pain-explanation">The <strong>Vault</strong> gives every Agent your business' facts and your rules.</span>
             <strong class="pain-outcome">Get answers that fit your firm.</strong>
           </div>
         </details>
         <details class="pain-point">
           <summary>
-            <span class="pain-problem">Important emails buried in piles</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v13h-4l-2 3h-4l-2-3H4z"/><path d="M4 12h5l2 3h2l2-3h5"/></svg><span>Important emails get buried and info slips through</span></span>
+            <span class="pain-reveal">How we solve it ⤵</span>
           </summary>
           <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Email Agent</strong> sorts your inbox, flags what matters and drafts the replies.</span>
-            <strong class="pain-outcome">See only what needs you.</strong>
+            <span class="pain-explanation">The <strong>Email Agent</strong> sorts every message, drafts replies your way, and files it in your Vault.</span>
+            <strong class="pain-outcome">Nothing slips through again.</strong>
           </div>
         </details>
         <details class="pain-point">
           <summary>
-            <span class="pain-problem">You missed an important deadline</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><circle cx="15" cy="15" r="3"/><path d="M15 13.5V15l1.2.8"/></svg><span>You keep missing important deadlines</span></span>
+            <span class="pain-reveal">How we solve it ⤵</span>
           </summary>
           <div class="pain-detail">
             <span class="pain-explanation">The <strong>Case Manager</strong> tracks every deadline and flags it early.</span>
-            <strong class="pain-outcome">Never miss a date.</strong>
+            <strong class="pain-outcome">Never miss an important meeting.</strong>
           </div>
         </details>
         <details class="pain-point">
           <summary>
-            <span class="pain-problem">You wait until the accountant shows you financial reports</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 16v-5M13 16V6M18 16v-8"/><path d="m6 8 5-3 4 2 5-4"/></svg><span>You wait on your accountant to know your numbers</span></span>
+            <span class="pain-reveal">How we solve it ⤵</span>
           </summary>
           <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Cashflow Manager</strong> shows what's coming in and what's overdue, and reports on the whole month.</span>
+            <span class="pain-explanation">The <strong>Cashflow Manager</strong> shows what's coming in, what's overdue, and reports on the month.</span>
             <strong class="pain-outcome">Know where your money stands.</strong>
           </div>
         </details>
         <details class="pain-point">
           <summary>
-            <span class="pain-problem">Your social pages are a complete ghost town</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 6h3l-2-6"/><path d="M6 14V10l13-5v14l-13-5"/><path d="M19 9a3 3 0 0 1 0 6"/></svg><span>Your social media accounts are a complete ghost town</span></span>
+            <span class="pain-reveal">How we solve it ⤵</span>
           </summary>
           <div class="pain-detail">
             <span class="pain-explanation">The <strong>Social Media Marketing Manager</strong> writes and schedules posts for your approval.</span>
@@ -1196,22 +1198,12 @@
         </details>
         <details class="pain-point">
           <summary>
-            <span class="pain-problem">Your Google profile looks outdated and you haven't touched it in years</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
+            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>You haven't updated your Google Business profile in years</span></span>
+            <span class="pain-reveal">How we solve it ⤵</span>
           </summary>
           <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Google Business Listing Promotion Agent</strong> keeps your profile fresh</span>
+            <span class="pain-explanation">The <strong>Google Business Listing Promotion Agent</strong> keeps your profile fresh with regular updates and optimizations.</span>
             <strong class="pain-outcome">Get found first.</strong>
-          </div>
-        </details>
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem">Your firm has more work than hours, and you're paying a lot of staff just to keep up</span>
-            <span class="pain-reveal">Here's how we solve it <span class="pain-chevron" aria-hidden="true"></span></span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">Your AI Office agents take over the repetitive work your staff is stretched thin on.</span>
-            <strong class="pain-outcome">Grow without adding headcount.</strong>
           </div>
         </details>
       </div>
@@ -1545,7 +1537,7 @@
           </div>
           <div class="trust-text">
             <strong>We stay with you</strong>
-            Ongoing management included — not just a setup and goodbye.
+            Ongoing management included, not just a setup and goodbye.
           </div>
         </div>
       </div>
