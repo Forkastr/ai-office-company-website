@@ -1,6 +1,6 @@
 # AI Office Company — Website
 
-Single-page marketing website for [AI Office Company](https://aiofficeco.com), a New Orleans-based company that creates AI Offices for small businesses.
+Single-page marketing website for [AI Office Company](https://aiofficecompany.com/), a New Orleans-based company that creates AI Offices for small businesses.
 
 ## About
 
