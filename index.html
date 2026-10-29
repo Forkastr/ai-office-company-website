@@ -1,1841 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="BXFeOpIIANb9r4f9pk23dGheMgLdwfYV752r-j9QCbo" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNQ750PL7S"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YNQ750PL7S');
-  </script>
-  <title>AI Office Company — AI Offices for Small Businesses in New Orleans</title>
-  <meta name="description" content="AI Office Company creates AI Offices for small businesses in New Orleans. Get analytics, advice, and automated tasks — all under your supervision." />
-
-  <!-- Inter font from Google Fonts CDN via cdnjs-compatible approach (system fallback included) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ============================================================
-       RESET & BASE
-    ============================================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg-primary:    #0A1628;
-      --bg-secondary:  #0F1E38;
-      --accent:        #2D8EFF;
-      --accent-hover:  #4FA3FF;
-      --text-primary:  #FFFFFF;
-      --text-secondary:#A0B4CC;
-      --card-bg:       #111F35;
-      --card-border:   #1E3050;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: var(--font);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ============================================================
-       UTILITY
-    ============================================================ */
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-family: var(--font);
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-      text-align: center;
-      min-height: 48px;
-      line-height: 1.2;
-    }
-    .btn:hover, .btn:focus-visible {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(45, 142, 255, 0.35);
-      outline: none;
-    }
-    .btn:active {
-      transform: translateY(0);
-    }
-
-    .section-heading {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-
-    .section-sub {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      max-width: 680px;
-    }
-
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
-    #navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10, 22, 40, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-
-    .nav-logo {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-    }
-
-    .nav-cta {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      min-height: 44px;
-    }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
-    #hero {
-      position: relative;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 80px 0 60px;
-    }
-
-    /* Animated canvas background */
-    #hero-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 760px;
-    }
-
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: white;
-      margin-bottom: 20px;
-      background: rgba(45, 142, 255, 0.1);
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid rgba(45, 142, 255, 0.25);
-    }
-
-    .hero-headline {
-      font-size: clamp(2.2rem, 6vw, 3.8rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-    }
-
-    .hero-headline em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: var(--text-secondary);
-      max-width: 620px;
-      margin-bottom: 36px;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .hero-supporting {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-supporting::before {
-      content: '';
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232D8EFF'%3E%3Cpath d='M12 1a11 11 0 1 1 0 22A11 11 0 0 1 12 1zm0 2a9 9 0 1 0 0 18A9 9 0 0 0 12 3zm4.707 5.293a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L11 13.586l4.293-4.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E") center/contain no-repeat;
-      flex-shrink: 0;
-    }
-
-    /* ============================================================
-       PAIN POINTS
-    ============================================================ */
-    #pain-points {
-      background: var(--bg-secondary);
-      padding: 88px 0;
-    }
-
-    .pain-points-header {
-      max-width: 800px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-
-    .pain-points-kicker {
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-
-    .pain-points-heading {
-      max-width: 800px;
-      margin: 0 auto 20px;
-      color: var(--text-primary);
-      font-size: 2.75rem;
-      font-weight: 700;
-      line-height: 1.15;
-    }
-
-    .pain-points-heading span {
-      color: var(--accent-hover);
-    }
-
-    .pain-points-intro {
-      max-width: 620px;
-      margin: 0 auto;
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.65;
-    }
-
-    .pain-points-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .pain-point {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-    }
-
-    @media (min-width: 601px) {
-      .pain-point:has(+ .pain-point[open]),
-      .pain-point[open] + .pain-point {
-        align-self: start;
-      }
-    }
-
-    .pain-point:nth-child(4n + 1),
-    .pain-point:nth-child(4n + 4) {
-      background: #12243D;
-    }
-
-    .pain-point:nth-child(4n + 2),
-    .pain-point:nth-child(4n + 3) {
-      background: #19314D;
-    }
-
-    .pain-point:hover {
-      border-color: rgba(79, 163, 255, 0.55);
-    }
-
-    .pain-point summary {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      flex: 1;
-      gap: 10px;
-      padding: 18px 20px;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .pain-point summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .pain-point summary:focus-visible {
-      outline: 2px solid var(--accent-hover);
-      outline-offset: -3px;
-    }
-
-    .pain-problem {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-primary);
-      font-weight: 600;
-      line-height: 1.45;
-      text-align: left;
-    }
-
-    .pain-icon {
-      width: 20px;
-      height: 20px;
-      flex: 0 0 20px;
-      color: var(--accent-hover);
-    }
-
-    .pain-problem > span {
-      flex: 1;
-    }
-
-    .pain-reveal {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      margin-top: auto;
-      gap: 12px;
-      color: var(--accent-hover);
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .pain-detail {
-      padding: 0 20px 18px;
-      border-top: 1px solid rgba(160, 180, 204, 0.18);
-    }
-
-    .pain-outcome {
-      display: block;
-      color: var(--text-primary);
-      font-size: 1rem;
-      font-weight: 600;
-      margin-top: 12px;
-    }
-
-    .pain-explanation {
-      display: block;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-top: 14px;
-    }
-
-    /* ============================================================
-       WHAT IS AI OFFICE
-    ============================================================ */
-    #what-is {
-      background: var(--bg-primary);
-      padding: 96px 0;
-    }
-
-    .what-is-header {
-      text-align: center;
-      max-width: 860px;
-      margin: 0 auto 64px;
-    }
-
-    .what-is-kicker,
-    .cards-kicker {
-      color: var(--accent-hover);
-      font-size: 0.75rem;
-      font-weight: 600;
-      line-height: 1.4;
-      text-transform: uppercase;
-    }
-
-    .what-is-kicker {
-      margin-bottom: 14px;
-    }
-
-    .what-is-heading {
-      max-width: 840px;
-      margin: 0 auto;
-      font-size: 2.35rem;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-
-    .what-is-heading span {
-      color: var(--accent-hover);
-    }
-
-    .what-is-header .section-sub {
-      margin: 16px auto 0;
-    }
-
-    /* ============================================================
-       COMPONENT CARDS (Interactive)
-    ============================================================ */
-    .cards-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .cards-kicker {
-      margin-bottom: 8px;
-    }
-
-    .cards-header .section-heading {
-      font-size: 1.85rem;
-      line-height: 1.25;
-      margin-bottom: 0;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .info-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 36px 28px 28px;
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
-      cursor: pointer;
-    }
-
-    .info-card:hover {
-      box-shadow: 0 4px 40px rgba(45, 142, 255, 0.2);
-      border-color: rgba(45, 142, 255, 0.45);
-      transform: translateY(-3px);
-    }
-
-    .info-card-coming-soon {
-      cursor: default;
-    }
-
-    .info-card-coming-soon:hover {
-      box-shadow: none;
-      border-color: var(--card-border);
-      transform: none;
-    }
-
-    .info-card-icon {
-      width: 56px;
-      height: 56px;
-      background: rgba(45, 142, 255, 0.12);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .info-card-icon svg {
-      width: 30px;
-      height: 30px;
-      color: var(--accent);
-    }
-
-    .info-card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .info-card-title-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .info-card-title-row .info-card-title {
-      margin-bottom: 0;
-    }
-
-    .coming-soon-badge {
-      flex-shrink: 0;
-      padding: 4px 8px;
-      border: 1px solid rgba(201, 168, 76, 0.4);
-      border-radius: 999px;
-      background: rgba(201, 168, 76, 0.12);
-      color: #C9A84C;
-      font-size: 0.7rem;
-      font-weight: 600;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-
-    .info-card-teaser {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      flex: 1;
-      line-height: 1.65;
-    }
-
-    .info-card-learn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 24px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent);
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      font-family: var(--font);
-      transition: gap 0.2s ease;
-      min-height: 44px;
-    }
-
-    .info-card-learn:hover {
-      gap: 10px;
-    }
-
-    .info-card-learn svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* ============================================================
-       MODAL SLIDESHOW
-    ============================================================ */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 500;
-      background: rgba(7, 15, 30, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal-box {
-      background: var(--bg-secondary);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      width: 100%;
-      max-width: 640px;
-      max-height: 90svh;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px 16px;
-      border-bottom: 1px solid var(--card-border);
-      flex-shrink: 0;
-    }
-
-    .modal-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .modal-close {
-      width: 44px;
-      height: 44px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      transition: color 0.2s, background 0.2s;
-    }
-
-    .modal-close:hover {
-      color: var(--text-primary);
-      background: rgba(255,255,255,0.07);
-    }
-
-    .modal-slides {
-      overflow: hidden;
-      flex: 1;
-      position: relative;
-    }
-
-    .modal-slide {
-      display: none;
-      padding: 40px 36px 32px;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .modal-slide.active {
-      display: flex;
-    }
-
-    .slide-number {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .slide-heading {
-      font-size: clamp(1.25rem, 3vw, 1.6rem);
-      font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-
-    .slide-heading em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .slide-body {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    .modal-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px 20px;
-      border-top: 1px solid var(--card-border);
-      flex-shrink: 0;
-    }
-
-    .modal-dots {
-      display: flex;
-      gap: 8px;
-    }
-
-    .modal-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--card-border);
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .modal-dot.active {
-      background: var(--accent);
-      transform: scale(1.25);
-    }
-
-    .modal-nav {
-      display: flex;
-      gap: 8px;
-    }
-
-    .modal-nav-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      border: 1px solid var(--card-border);
-      background: var(--card-bg);
-      color: var(--text-primary);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .modal-nav-btn:hover:not(:disabled) {
-      background: rgba(45, 142, 255, 0.15);
-      border-color: var(--accent);
-    }
-
-    .modal-nav-btn:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
-
-    .modal-nav-btn svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    /* ============================================================
-       HOW IT WORKS
-    ============================================================ */
-    #how-it-works {
-      background: var(--bg-secondary);
-      padding: 96px 0;
-      text-align: center;
-    }
-
-    .how-steps {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 24px;
-      margin: 48px 0 24px;
-      position: relative;
-    }
-
-    .how-steps::before {
-      content: '';
-      position: absolute;
-      top: 24px;
-      left: calc(12.5% + 24px);
-      right: calc(12.5% + 24px);
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0.35;
-      pointer-events: none;
-    }
-
-    .step {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      text-align: center;
-    }
-
-    .step-copy {
-      display: grid;
-      gap: 6px;
-      max-width: 250px;
-    }
-
-    .step-icon {
-      width: 48px;
-      height: 48px;
-      flex: 0 0 48px;
-      background: rgba(45, 142, 255, 0.12);
-      border: 1px solid rgba(45, 142, 255, 0.3);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      background: var(--bg-secondary);
-    }
-
-    .step-icon svg {
-      width: 22px;
-      height: 22px;
-      color: var(--accent);
-    }
-
-    .step-title {
-      font-weight: 600;
-      font-size: 1rem;
-      line-height: 1.45;
-    }
-
-    .step-desc {
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      line-height: 1.55;
-    }
-
-    .how-summary {
-      margin: 0 auto 40px;
-      color: var(--text-secondary);
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .how-note {
-      margin-top: 16px;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    /* ============================================================
-       TRUST SECTION
-    ============================================================ */
-    #trust {
-      background: var(--bg-primary);
-      padding: 96px 0;
-    }
-
-    .trust-header {
-      text-align: center;
-      margin-bottom: 52px;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 840px;
-      margin: 0 auto;
-    }
-
-    .trust-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .trust-item:hover {
-      border-color: rgba(45, 142, 255, 0.3);
-      box-shadow: 0 0 20px rgba(45, 142, 255, 0.1);
-    }
-
-    .trust-icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      background: rgba(45, 142, 255, 0.12);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .trust-icon svg {
-      width: 22px;
-      height: 22px;
-      color: var(--accent);
-    }
-
-    .trust-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-secondary);
-    }
-
-    .trust-text strong {
-      display: block;
-      color: var(--text-primary);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    /* ============================================================
-       LEAD CAPTURE
-    ============================================================ */
-    #cta-section {
-      background: linear-gradient(135deg, #0D1F3C 0%, #0A1628 50%, #0B1A30 100%);
-      border-top: 1px solid var(--card-border);
-      border-bottom: 1px solid var(--card-border);
-      padding: 96px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #cta-section::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 400px;
-      background: radial-gradient(ellipse at center, rgba(45, 142, 255, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-heading {
-      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-      font-weight: 700;
-      line-height: 1.2;
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-
-    .cta-sub {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      max-width: 520px;
-      margin: 0 auto 36px;
-    }
-
-    .cta-note {
-      margin-top: 20px;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-    }
-
-    .cta-note a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    #footer {
-      background: #07101E;
-      padding: 48px 0 32px;
-      border-top: 1px solid var(--card-border);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 36px;
-    }
-
-    .footer-brand .footer-name {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .footer-brand .footer-tagline {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      max-width: 260px;
-      line-height: 1.6;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--text-primary);
-    }
-
-    .footer-links svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    .footer-copy {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #4A6080;
-      border-top: 1px solid #0F1E38;
-      padding-top: 24px;
-    }
-
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
-    @media (max-width: 900px) {
-      .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .cards-grid .info-card-coming-soon {
-        grid-column: 1 / -1;
-      }
-
-      .how-steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px 16px;
-      }
-
-      .how-steps::before {
-        display: none;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-cta-group {
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .modal-slide {
-        padding: 28px 20px 20px;
-      }
-
-      .modal-header {
-        padding: 16px 20px 12px;
-      }
-
-      .modal-footer {
-        padding: 12px 20px 16px;
-      }
-
-      #pain-points {
-        padding: 64px 0;
-      }
-
-      .what-is-header {
-        margin-bottom: 48px;
-      }
-
-      .what-is-heading {
-        font-size: 1.8rem;
-      }
-
-      .cards-header .section-heading {
-        font-size: 1.55rem;
-      }
-
-      .pain-points-heading {
-        font-size: 2rem;
-      }
-
-      .pain-points-list {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .pain-point:nth-child(n) {
-        background: #12243D;
-      }
-
-      .pain-point:nth-child(even) {
-        background: #19314D;
-      }
-
-      .pain-point summary {
-        padding: 16px 18px;
-      }
-
-      .pain-detail {
-        padding: 0 18px 16px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="BXFeOpIIANb9r4f9pk23dGheMgLdwfYV752r-j9QCbo">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNQ750PL7S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YNQ750PL7S');
+</script>
+<script>document.documentElement.classList.add('js');</script>
+
+<title>AI Office Company | AI for Small Business in New Orleans</title>
+<meta name="description" content="Frustrated with AI? AI Office gives it a Vault of your business's information and rules, so your Agents stop guessing. New Orleans. Book a free audit.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://aiofficecompany.com/">
+<meta name="theme-color" content="#0A1628">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Office Company">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://aiofficecompany.com/">
+<meta property="og:title" content="AI Office Company | AI for Small Business in New Orleans">
+<meta property="og:description" content="Frustrated with AI? AI Office gives it a Vault of your business's information and rules, so your Agents stop guessing. Book a free audit.">
+<meta property="og:image" content="https://aiofficecompany.com/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" href="assets/images/hero-desktop.webp" media="(min-width:1024px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="assets/images/hero-mobile.webp" media="(max-width:1023px)" fetchpriority="high">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ProfessionalService","@id":"https://aiofficecompany.com/#business",
+  "name":"AI Office Company","url":"https://aiofficecompany.com/",
+  "logo":"https://aiofficecompany.com/assets/images/logo.png",
+  "image":"https://aiofficecompany.com/assets/images/og-image.jpg",
+  "description":"AI Office sets up a Vault of your business's information, rules and instructions, then builds AI Agents that work from it, with your approval on everything.",
+  "telephone":"+1-504-521-6997","email":"info@aiofficecompany.com",
+  "address":{"@type":"PostalAddress","addressLocality":"New Orleans","addressRegion":"LA","addressCountry":"US"},
+  "areaServed":{"@type":"City","name":"New Orleans"},
+  "priceRange":"$$",
+  "founder":{"@type":"Person","name":"Eric Vic"},
+  "sameAs":["https://www.linkedin.com/company/aiofficecompany","https://www.facebook.com/aiofficecompany","https://www.instagram.com/aiofficecompany"],
+  "makesOffer":[
+   {"@type":"Offer","name":"Vault Setup + Agents","priceSpecification":{"@type":"PriceSpecification","minPrice":495,"priceCurrency":"USD"}},
+   {"@type":"Offer","name":"Marketing Package","description":"Priced after a call"}]},
+ {"@type":"WebSite","@id":"https://aiofficecompany.com/#website","url":"https://aiofficecompany.com/","name":"AI Office Company","publisher":{"@id":"https://aiofficecompany.com/#business"}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"I already use ChatGPT. Why do I need this?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT is a smart assistant that knows nothing about your business, and it forgets what you tell it. AI Office gives AI a Vault with your information, rules and instructions, then builds Agents that work from it every day. You approve everything before it goes out."}},
+ {"@type":"Question","name":"What is a Vault?","acceptedAnswer":{"@type":"Answer","text":"Your Vault is your business's information, rules and instructions, organized in one place in your own accounts. Your Agents read it before they do anything. When something changes, you update the Vault once and every Agent follows."}},
+ {"@type":"Question","name":"How is this different from other AI agent companies?","acceptedAnswer":{"@type":"Answer","text":"Most companies start with Agents. We start with your Vault. Agents without your business behind them guess and make things up (that's what people mean by AI \"hallucinations\"). Ours work from your verified information and show where each answer came from."}},
+ {"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Vault Setup with your first Agents starts at $495, with optional tech support at $45 a month. The Marketing Package is priced after a call, once we know what your business needs."}},
+ {"@type":"Question","name":"Will the AI send something to a customer without me seeing it?","acceptedAnswer":{"@type":"Answer","text":"No. Every email, filing note, reminder and post waits for your approval. Nothing goes out until you approve it."}},
+ {"@type":"Question","name":"What if the AI gets something wrong?","acceptedAnswer":{"@type":"Answer","text":"Your Agents work only from your Vault and show where each answer came from. If something new contradicts the Vault, they flag it. And you review everything before it goes anywhere."}},
+ {"@type":"Question","name":"Where does my business information live?","acceptedAnswer":{"@type":"Answer","text":"Your Vault is kept in your own accounts, and you decide who can see it. We'll go over exactly where it lives on your audit call."}},
+ {"@type":"Question","name":"Will this replace my staff?","acceptedAnswer":{"@type":"Answer","text":"It takes the repetitive work off their desks: sorting, filing, reminders and first drafts. Your people get time back for customers and the work that grows the business."}},
+ {"@type":"Question","name":"Do I need to be good with technology?","acceptedAnswer":{"@type":"Answer","text":"No. We build it, set it up and show your team how to use it. If you can read an email and click approve, you can run your AI Office."}},
+ {"@type":"Question","name":"Will it work with the software we already use?","acceptedAnswer":{"@type":"Answer","text":"We review your current tools during the free audit, and your written plan shows how the Agents fit around them."}},
+ {"@type":"Question","name":"How long does setup take?","acceptedAnswer":{"@type":"Answer","text":"It depends on the size of your business and which Agents you need. You'll get a timeline in your written plan."}},
+ {"@type":"Question","name":"What kinds of businesses do you work with?","acceptedAnswer":{"@type":"Answer","text":"Small businesses with too much email, too much paperwork and too few people. Law firms, medical practices, retailers and service companies all fit."}},
+ {"@type":"Question","name":"What about the rules in my industry?","acceptedAnswer":{"@type":"Answer","text":"The judgment stays with you. The AI drafts, and a person on your team reviews and approves before anything reaches a customer, a regulator or the public."}}
+]}
+</script>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<main>
 
-  <!-- ============================================================
-       NAVIGATION
-  ============================================================ -->
-  <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="#" class="nav-logo">AI Office Company</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
-           class="btn nav-cta"
-           target="_blank"
-           rel="noopener noreferrer">
-          Book My Free Consultation
-        </a>
-      </div>
+<!-- ============================== HERO ============================== -->
+<header class="hero" id="top">
+  <div class="hero-photo" data-parallax>
+    <picture>
+      <source media="(min-width:1024px)" type="image/webp" srcset="assets/images/hero-desktop.webp">
+      <source media="(min-width:1024px)" srcset="assets/images/hero-desktop.jpg">
+      <source type="image/webp" srcset="assets/images/hero-mobile.webp">
+      <img src="assets/images/hero-mobile.jpg" alt="" loading="eager" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="hero-fade2"></div>
+  <div class="hero-fade"></div>
+
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="9" height="9" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/><rect x="13" y="2" width="9" height="9" rx="2.5" fill="#2D8EFF"/><rect x="2" y="13" width="9" height="9" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/><rect x="13" y="13" width="9" height="9" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/></svg>AI Office Company</a>
+    <div class="nav-right">
+      <div class="nav-links"><a href="#why">Problems</a><a href="#how">How it works</a><a href="#offers">Offers</a><a href="#faq">FAQ</a></div>
+      <a class="nav-call" href="tel:+15045216997" aria-label="Call (504) 521-6997"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      <a class="nav-book" href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform" target="_blank" rel="noopener">BOOK A CALL</a>
     </div>
   </nav>
 
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-  <section id="hero">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="container">
-      <div class="hero-content">
-        <span class="hero-eyebrow">AI OFFICE COMPANY</span>
-        <h1 class="hero-headline">
-          Your business,<br />running itself.<br />
-          <em>Under your supervision.</em>
-        </h1>
-        <p class="hero-sub">
-          Let us create your AI Office: get important analytics, track deadlines, handle social media
-          and get the repetitive tasks done automatically. You always stay in control.
-        </p>
-        <div class="hero-cta-group">
-          <a href="#pain-points"
-             class="btn">
-            Problems We Solve
-          </a>
-          <span class="hero-supporting">No technical knowledge required</span>
-        </div>
-        </div>
-      </div>
-      </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow hero-eyebrow">New Orleans · AI for small businesses</div>
+      <h1>Are you <span class="frus">frustrated</span> with using AI in your business?</h1>
+      <p class="hero-tag"><span class="alone">You're not alone!</span></p>
+      <p class="hero-p">AI knows everything except your business. So it guesses, makes mistakes, and forgets by tomorrow. <span class="hero-fix">I built AI Office to fix that.</span></p>
+      <div class="sig"><span class="sig-text"><span class="sig-name">Eric Vic, founder</span> <span class="sig-detail">· 22 years running businesses</span></span></div>
     </div>
-  </section>
 
-  <!-- ============================================================
-       PAIN POINTS
-  ============================================================ -->
-  <section id="pain-points" aria-labelledby="pain-points-heading">
-    <div class="container">
-      <div class="pain-points-header">
-        <h2 id="pain-points-heading" class="section-heading pain-points-heading">Do you have <span>this problem?</span></h2>
-      </div>
-      <div class="pain-points-list">
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3h.5a8.5 8.5 0 0 1 8 8z"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-.9.9-1.9 1.2-1.9 2.7"/><path d="M12 17h.01"/></svg><span>AI gives generic, unreliable answers</span></span>
-            <span class="pain-reveal">How we solve it ⤵</span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Vault</strong> gives every Agent your business' facts and your rules.</span>
-            <strong class="pain-outcome">Get answers that fit your firm.</strong>
-          </div>
-        </details>
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v13h-4l-2 3h-4l-2-3H4z"/><path d="M4 12h5l2 3h2l2-3h5"/></svg><span>Important emails get buried and info slips through</span></span>
-            <span class="pain-reveal">How we solve it ⤵</span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Email Agent</strong> sorts every message, drafts replies your way, and files it in your Vault.</span>
-            <strong class="pain-outcome">Nothing slips through again.</strong>
-          </div>
-        </details>
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><circle cx="15" cy="15" r="3"/><path d="M15 13.5V15l1.2.8"/></svg><span>You keep missing important deadlines</span></span>
-            <span class="pain-reveal">How we solve it ⤵</span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Case Manager</strong> tracks every deadline and flags it early.</span>
-            <strong class="pain-outcome">Never miss an important meeting.</strong>
-          </div>
-        </details>
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 16v-5M13 16V6M18 16v-8"/><path d="m6 8 5-3 4 2 5-4"/></svg><span>You wait on your accountant to know your numbers</span></span>
-            <span class="pain-reveal">How we solve it ⤵</span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Cashflow Manager</strong> shows what's coming in, what's overdue, and reports on the month.</span>
-            <strong class="pain-outcome">Know where your money stands.</strong>
-          </div>
-        </details>
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 6h3l-2-6"/><path d="M6 14V10l13-5v14l-13-5"/><path d="M19 9a3 3 0 0 1 0 6"/></svg><span>Your social media accounts are a complete ghost town</span></span>
-            <span class="pain-reveal">How we solve it ⤵</span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Social Media Marketing Manager</strong> writes and schedules posts for your approval.</span>
-            <strong class="pain-outcome">Stay visible without writing a caption.</strong>
-          </div>
-        </details>
-        <details class="pain-point">
-          <summary>
-            <span class="pain-problem"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>You haven't updated your Google Business profile in years</span></span>
-            <span class="pain-reveal">How we solve it ⤵</span>
-          </summary>
-          <div class="pain-detail">
-            <span class="pain-explanation">The <strong>Google Business Listing Promotion Agent</strong> keeps your profile fresh with regular updates and optimizations.</span>
-            <strong class="pain-outcome">Get found first.</strong>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       WHAT IS AI OFFICE
-  ============================================================ -->
-  <section id="what-is" aria-labelledby="what-is-heading">
-    <div class="container">
-      <div class="what-is-header">
-        <p class="what-is-kicker">A human-supervised AI office</p>
-        <h2 id="what-is-heading" class="section-heading what-is-heading">
-          AI Office is your <span>virtual office space</span> where our Agents do their work.
-        </h2>
-      </div>
-      <div id="components" aria-labelledby="components-heading">
-      <div class="cards-header">
-        <h3 id="components-heading" class="section-heading">What's inside your AI Office?</h3>
-      </div>
-
-      <div class="cards-grid">
-
-        <!-- Card 1: The Vault -->
-        <article class="info-card" role="button" tabindex="0" aria-label="Learn more about The Vault" data-modal="modal-vault">
-          <div class="info-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              <circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <div class="info-card-title">The Vault</div>
-          <div class="info-card-teaser">
-            The foundation of everything. Everything your firm knows, in one place.
-          </div>
-          <button class="info-card-learn" aria-label="Learn more about The Vault">
-            Learn more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
-        </article>
-
-        <!-- Card 2: AI Agents -->
-        <article class="info-card" role="button" tabindex="0" aria-label="Learn more about the Analytics Desk" data-modal="modal-analytics">
-          <div class="info-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="7" r="3"/>
-              <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
-            </svg>
-          </div>
-          <div class="info-card-title">AI Agents</div>
-          <div class="info-card-teaser">
-            Each agent has one job. They work from your Vault and send nothing out without your approval.
-          </div>
-          <button class="info-card-learn" aria-label="Learn more about the Analytics Desk">
-            Learn more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
-        </article>
-
-        <!-- Ousia teaser -->
-        <article class="info-card info-card-coming-soon" aria-labelledby="ousia-card-title">
-          <div class="info-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 5c0-1.7 4-3 9-3s9 1.3 9 3v14c0 1.7-4 3-9 3s-9-1.3-9-3z"/>
-              <path d="M3 5c0 1.7 4 3 9 3s9-1.3 9-3M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/>
-            </svg>
-          </div>
-          <div class="info-card-title-row">
-            <div class="info-card-title" id="ousia-card-title">Ousia</div>
-            <span class="coming-soon-badge">Coming soon</span>
-          </div>
-          <div class="info-card-teaser">
-            Our AI-native case management database built for law firms. Every case, client and detail lives in one place your whole firm can reach.
-          </div>
-        </article>
-
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       MODALS
-  ============================================================ -->
-
-  <!-- Modal: The Vault -->
-  <div id="modal-vault" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-vault-title">
-    <div class="modal-box">
-      <div class="modal-header">
-        <span id="modal-vault-title" class="modal-title">The Vault</span>
-        <button class="modal-close" aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    <!-- Demo: a generic AI gets it wrong, then works from the Vault. Decorative; the copy above carries the message. -->
+    <div class="hero-anim q1 a1 t1 q2 t2 vault open chip" aria-hidden="true">
+      <div class="vbox">
+        <div class="vh">
+          <svg class="dial" viewBox="0 0 72 72">
+            <circle class="dial-ring" cx="36" cy="36" r="33" fill="#0A1628"/>
+            <g class="dial-ticks" stroke-width="2" stroke-linecap="round"><path d="M36 9V5M55.1 16.9l2.8-2.8M63 36h4M55.1 55.1l2.8 2.8M36 63v4M16.9 55.1l-2.8 2.8M9 36H5M16.9 16.9l-2.8-2.8"/></g>
+            <g class="dial-arms"><path class="dial-arm" d="M36 36V14M36 36L55 47M36 36L17 47" stroke-linecap="round"/><g class="dial-dots"><circle cx="36" cy="14" r="3.5"/><circle cx="55" cy="47" r="3.5"/><circle cx="17" cy="47" r="3.5"/></g></g>
+            <circle class="dial-hub" cx="36" cy="36" r="8.5" fill="#112240"/>
           </svg>
-        </button>
-      </div>
-      <div class="modal-slides">
-        <div class="modal-slide active">
-          <div class="slide-number">01 / 03</div>
-          <h3 class="slide-heading">The Vault is the <em>foundation</em> of your AI Office.</h3>
-          <p class="slide-body">
-            It contains everything verified about your business: your services, your team, your tone, your processes.
-            Nothing in your AI Office runs without it.
-          </p>
+          <div class="vh-txt"><div class="vh-title">Your Vault</div><div class="vh-status"><span class="vs-off">Not connected</span><span class="vs-on">Connected</span></div></div>
         </div>
-        <div class="modal-slide">
-          <div class="slide-number">02 / 03</div>
-          <h3 class="slide-heading">What goes in <em>The Vault?</em></h3>
-          <p class="slide-body">
-            Your business description. Your products and services. How you communicate with customers.
-            Your processes and procedures. Your staff structure.
-          </p>
-        </div>
-        <div class="modal-slide">
-          <div class="slide-number">03 / 03</div>
-          <h3 class="slide-heading">Why it matters.</h3>
-          <p class="slide-body">
-            Every AI action is grounded in your verified business content. No guessing. No generic responses.
-            Everything is specific to your business.
-          </p>
+        <div class="drawers">
+          <div class="drawer is-sel"><span class="dr-label">Policies</span><span class="dr-file">Policies.md</span><i class="dr-handle"></i></div>
+          <div class="drawer"><span class="dr-label">Pricing</span><span class="dr-file">Rates 2026.md</span><i class="dr-handle"></i></div>
+          <div class="drawer"><span class="dr-label">Customers</span><span class="dr-file">Contacts.md</span><i class="dr-handle"></i></div>
+          <div class="drawer"><span class="dr-label">Instructions</span><span class="dr-file">Email rules.md</span><i class="dr-handle"></i></div>
         </div>
       </div>
-      <div class="modal-footer">
-        <div class="modal-dots">
-          <div class="modal-dot active"></div>
-          <div class="modal-dot"></div>
-          <div class="modal-dot"></div>
+
+      <div class="chat">
+        <div class="chat-head">
+          <svg class="ch-back" viewBox="0 0 24 24" fill="none" stroke="#2D8EFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          <div class="av">AI<i></i></div>
+          <div class="ch-txt"><div class="ch-name">AI Agent</div><div class="ch-status"><span class="cs-off">Generic AI</span><span class="cs-on">Working from your Vault</span></div></div>
+          <div class="lights"><i></i><i></i><i></i></div>
         </div>
-        <div class="modal-nav">
-          <button class="modal-nav-btn modal-prev" aria-label="Previous slide" disabled>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"/>
-              <polyline points="12 19 5 12 12 5"/>
-            </svg>
-          </button>
-          <button class="modal-nav-btn modal-next" aria-label="Next slide">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
+        <div class="chat-body">
+          <div class="story is-on">
+            <div class="m m-d1 day">Today</div>
+            <div class="m m-q1 bq">A client wants their deposit back. Can they?</div>
+            <div class="m m-a1 ba-row"><div class="ba"><span class="st">Yes, deposits are always refundable.</span></div><div class="tag">You'd refund $500 you don't owe</div></div>
+            <div class="m m-q2 bq">They paid 12 days ago. Draft my reply.</div>
+            <div class="m m-a2 ba-row"><div class="ba"><span class="st">Done: ‘Your full refund is on its way.’</span></div><div class="tag">Promised money you don't owe</div></div>
+            <div class="m m-fix bf"><div class="bf-t">Deposits are non-refundable after 7 days. Reply drafted with your policy attached.</div><div class="bf-s">Source: Vault › Policies.md</div></div>
+          </div>
+          <div class="story">
+            <div class="m m-d1 day">Today</div>
+            <div class="m m-q1 bq">Quote the Hale kitchen job.</div>
+            <div class="m m-a1 ba-row"><div class="ba"><span class="st">About $1,200 should cover it.</span></div><div class="tag">Underquoted by $600</div></div>
+            <div class="m m-q2 bq">It's only a half-day job. Can we go lower?</div>
+            <div class="m m-a2 ba-row"><div class="ba"><span class="st">Sure, $900 works for a half day.</span></div><div class="tag">Below your job minimum</div></div>
+            <div class="m m-fix bf"><div class="bf-t">Drafted at $1,800, using your 2026 rate sheet and job minimums.</div><div class="bf-s">Source: Vault › Pricing › Rates 2026.md</div></div>
+            <div class="m m-chip chipx">Ready for your approval</div>
+          </div>
+          <div class="story">
+            <div class="m m-d1 day">Today</div>
+            <div class="m m-q1 bq">Send Smith Co. their invoice reminder.</div>
+            <div class="m m-a1 ba-row"><div class="ba"><span class="st">Sent to Smyth &amp; Sons.</span></div><div class="tag">Wrong customer</div></div>
+            <div class="m m-q2 bq">Send the reply to Mav Trucks now.</div>
+            <div class="m m-a2 ba-row"><div class="ba"><span class="st">Sent the draft to the client.</span></div><div class="tag">Sends past operating hours</div></div>
+            <div class="m m-fix bf"><div class="bf-t">Drafted to the right contacts on file. The Mav Trucks reply goes out at 8:00 AM, inside your business hours.</div><div class="bf-s">Source: Vault › Customers › Contacts.md</div></div>
+            <div class="m m-chip chipx">Ready for your approval</div>
+          </div>
+          <div class="story">
+            <div class="m m-d1 day">Today</div>
+            <div class="m m-q1 bq">Reply to the new inquiry from Dana.</div>
+            <div class="m m-a1 ba-row"><div class="ba"><span class="st">Hey Dana, sure thing, we can start tomorrow.</span></div><div class="tag">Ignored your instructions</div></div>
+            <div class="m m-d2 day">Next day</div>
+            <div class="m m-q2 bq">Write a follow-up on the Hale quote.</div>
+            <div class="m m-a2 ba-row"><div class="ba"><span class="st">Hi there, just checking in. Any thoughts? Cheers</span></div><div class="tag">Same mistake, again</div></div>
+            <div class="m m-fix bf"><div class="bf-t">Formal replies drafted and signed with your name. No start date promised before a call.</div><div class="bf-s">Source: Vault › Instructions › Email rules.md</div></div>
+            <div class="m m-chip chipx">Ready for your approval</div>
+          </div>
         </div>
+        <div class="composer">
+          <span class="cp-plus"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          <svg class="cp-cam" viewBox="0 0 24 24" fill="none" stroke="#2D8EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span class="cp-input"><span>Message…</span><svg viewBox="0 0 24 24" fill="none" stroke="#2D8EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span>
+          <svg class="cp-send" viewBox="0 0 24 24" fill="#2D8EFF"><path d="M2.5 21.5l19-9.5-19-9.5 3 9.5-3 9.5zm3-9.5h8" stroke="#2D8EFF" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="home"><i></i></div>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform" target="_blank" rel="noopener">Book My Free Audit<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="hero-micro">Free · 1-hour call · No obligation</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== WHY ============================== -->
+<section class="sec why" id="why" data-sec="why">
+  <div class="photo why-photo"><picture><source media="(min-width:1024px)" type="image/webp" srcset="assets/images/why-desktop.webp"><source media="(min-width:1024px)" srcset="assets/images/why-desktop.jpg"><source type="image/webp" srcset="assets/images/why-mobile.webp"><img src="assets/images/why-mobile.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+  <div class="layer why-l1"></div><div class="layer glow"></div>
+  <div class="why-head rv">
+    <div class="eyebrow">Why AI isn't working for you</div>
+    <h2>AI isn't failing because it isn't smart. <span>It's failing because no one taught it your business.</span></h2>
+  </div>
+  <div class="cmp" role="table" aria-label="Without a Vault compared with your Vault">
+    <div class="cmp-col cmp-col-no"></div><div class="cmp-col cmp-col-yes"></div>
+    <div class="cmp-h cmp-h-no" role="columnheader">Without a Vault</div>
+    <div class="cmp-h cmp-h-yes" role="columnheader">With your Vault</div>
+    <div class="cmp-row" role="row" style="--i:0;--r:2"><div class="cmp-no" role="cell"><span class="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M18 6 6 18"/><path pathLength="1" d="M6 6l12 12"/></svg></span>Starts from zero every time</div><div class="cmp-arrow" aria-hidden="true"><i></i><b></b></div><div class="cmp-yes" role="cell"><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Starts from everything your business knows</div></div>
+    <div class="cmp-row" role="row" style="--i:1;--r:3"><div class="cmp-no" role="cell"><span class="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M18 6 6 18"/><path pathLength="1" d="M6 6l12 12"/></svg></span>Guesses when it doesn't know</div><div class="cmp-arrow" aria-hidden="true"><i></i><b></b></div><div class="cmp-yes" role="cell"><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Flags anything that contradicts</div></div>
+    <div class="cmp-row" role="row" style="--i:2;--r:4"><div class="cmp-no" role="cell"><span class="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M18 6 6 18"/><path pathLength="1" d="M6 6l12 12"/></svg></span>You correct the same mistake every day</div><div class="cmp-arrow" aria-hidden="true"><i></i><b></b></div><div class="cmp-yes" role="cell"><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Fix it once, and every Agent follows the fix</div></div>
+    <div class="cmp-row" role="row" style="--i:3;--r:5"><div class="cmp-no" role="cell"><span class="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M18 6 6 18"/><path pathLength="1" d="M6 6l12 12"/></svg></span>No way to check where an answer came from</div><div class="cmp-arrow" aria-hidden="true"><i></i><b></b></div><div class="cmp-yes" role="cell"><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Every answer shows its source</div></div>
+    <div class="cmp-row" role="row" style="--i:4;--r:6"><div class="cmp-no" role="cell"><span class="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M18 6 6 18"/><path pathLength="1" d="M6 6l12 12"/></svg></span>Can't trust it with a customer</div><div class="cmp-arrow" aria-hidden="true"><i></i><b></b></div><div class="cmp-yes" role="cell"><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Nothing goes out until you approve it</div></div>
+    <div class="cmp-end"></div>
+  </div>
+  <div class="vd">
+    <div class="tiles">
+      <div class="tile rv" style="--d:.2s"><span class="tile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8"/><path d="M8 7h6"/></svg></span><h4><span class="tile-your">Your </span><span class="tile-word">information</span></h4><p>documents, prices, policies, customer records</p></div>
+      <div class="tile rv" style="--d:.28s"><span class="tile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span><h4><span class="tile-your">Your </span><span class="tile-word">rules</span></h4><p>how you want things done, and what needs your sign-off</p></div>
+      <div class="tile rv" style="--d:.36s"><span class="tile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6h11M10 12h11M10 18h11M4 6h1v4M4 10h2M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></span><h4><span class="tile-your">Your </span><span class="tile-word">instructions</span></h4><p>step-by-step directions for each Agent</p></div>
+      <div class="tile rv" style="--d:.44s"><span class="tile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></span><h4><span class="tile-your">Your </span><span class="tile-word">records</span></h4><p>PDFs, images and files, kept as they are</p></div>
+    </div>
+    <svg class="vd-lines" viewBox="0 0 1200 150" preserveAspectRatio="none" fill="none" aria-hidden="true"><g stroke-width="2"><path pathLength="1" vector-effect="non-scaling-stroke" d="M138 0C138 90 560 60 578 140" style="--d:.5s"/><path pathLength="1" vector-effect="non-scaling-stroke" d="M446 0C446 70 590 70 594 140" style="--d:.6s"/><path pathLength="1" vector-effect="non-scaling-stroke" d="M754 0C754 70 610 70 606 140" style="--d:.7s"/><path pathLength="1" vector-effect="non-scaling-stroke" d="M1062 0C1062 90 640 60 622 140" style="--d:.8s"/></g></svg>
+    <div class="vd-vault"><span class="vd-box"><svg class="vd-icon" viewBox="0 0 576 512" aria-hidden="true"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M64 0C28.7 0 0 28.7 0 64V416c0 35.3 28.7 64 64 64H80l16 32h64l16-32H400l16 32h64l16-32h16c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM224 320a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-240a160 160 0 1 1 0 320 160 160 0 1 1 0-320zM480 221.3V336c0 8.8-7.2 16-16 16s-16-7.2-16-16V221.3c-18.6-6.6-32-24.4-32-45.3c0-26.5 21.5-48 48-48s48 21.5 48 48c0 20.9-13.4 38.7-32 45.3z"/></svg></span><span class="vd-label">Your Vault</span></div>
+  </div>
+  <div class="why-foot rv-o">
+    <p>We build it. You check it. Then your Agents work from it.</p>
+    <a href="#how">See how it works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="edge edge-t"></div><div class="edge edge-b"></div>
+</section>
+
+<!-- ============================== AGENTS ============================== -->
+<section class="sec agents" id="agents" data-sec="agents">
+  <div class="layer glow"></div>
+  <div class="agents-grid">
+    <div class="agents-head rv">
+      <div class="eyebrow">A day with your AI Office</div>
+      <h2>Your Agents work all day. You spend minutes approving.</h2>
+    </div>
+    <div class="dayw rv" style="--d:.1s">
+      <div class="day-clock">5:00 PM</div>
+      <div class="day-count"><span class="day-done">6</span> of 6 tasks handled</div>
+      <div class="day-live">
+        <div class="day-live-h"><span>Your AI Office</span><span class="day-live-tag">● LIVE</span></div>
+        <div class="day-now" aria-live="off"><div class="day-row"><span class="day-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3"/></svg></span><div class="day-txt"><div class="day-agent">You</div><div class="day-task">6 approvals, done before you head home</div></div><span class="day-st st-done">Done</span></div></div>
+      </div>
+      <div class="day-track" aria-hidden="true">
+        <div class="day-line"><i class="day-fill"></i><span class="day-dot on" style="--at:2.5%"></span><span class="day-dot on" style="--at:16.7%"></span><span class="day-dot on" style="--at:40%"></span><span class="day-dot on" style="--at:65%"></span><span class="day-dot on" style="--at:87.5%"></span><span class="day-dot on" style="--at:97.5%"></span><span class="day-knob"></span></div>
+        <div class="day-labels"><span>7 AM</span><span>NOON</span><span>5 PM</span></div>
       </div>
     </div>
   </div>
+  <div class="edge edge-t"></div><div class="edge edge-b"></div>
+</section>
 
-  <!-- Modal: The Agents -->
-  <div id="modal-analytics" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-analytics-title">
-    <div class="modal-box">
-      <div class="modal-header">
-        <span id="modal-analytics-title" class="modal-title">The Agents</span>
-        <button class="modal-close" aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
-      </div>
-      <div class="modal-slides">
-        <div class="modal-slide active">
-          <div class="slide-number">01 / 02</div>
-          <h3 class="slide-heading">Most AI tools are built for everyone. </h3>
-          <p class="slide-body">
-            Ours are built for law firms, and trained on yours. That's what takes the non-billable work off your desk.
-          </p>
-        </div>
-        <div class="modal-slide">
-          <div class="slide-number">02 / 02</div>
-          <h3 class="slide-heading">What is an <em>Agent?</em></h3>
-          <p class="slide-body">
-            An agent is an AI assistant trained for one specific job, like sorting email, tracking deadlines or updating clients.
-            It follows a set routine, works from your Vault, and stops for your approval.
-          </p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div class="modal-dots">
-          <div class="modal-dot active"></div>
-          <div class="modal-dot"></div>
-        </div>
-        <div class="modal-nav">
-          <button class="modal-nav-btn modal-prev" aria-label="Previous slide" disabled>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"/>
-              <polyline points="12 19 5 12 12 5"/>
-            </svg>
-          </button>
-          <button class="modal-nav-btn modal-next" aria-label="Next slide">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
-        </div>
+<!-- ============================== HOW ============================== -->
+<section class="sec how" id="how" data-sec="how">
+  <div class="photo how-photo"><picture><source media="(min-width:1024px)" type="image/webp" srcset="assets/images/how-desktop.webp"><source media="(min-width:1024px)" srcset="assets/images/how-desktop.jpg"><source type="image/webp" srcset="assets/images/how-mobile.webp"><img src="assets/images/how-mobile.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+  <div class="layer how-l1"></div><div class="layer glow"></div>
+  <div class="how-head rv">
+    <div class="eyebrow">How it works</div>
+    <h2>Building Your AI Office</h2>
+  </div>
+  <div class="steps-wrap">
+    <div class="steps-bar"><i></i></div>
+    <ol class="steps">
+      <li class="step rv" style="--d:.2s"><div class="step-row"><span class="step-n">1</span><h3>Free audit.</h3></div><p>We spend about an hour learning how your business runs and where AI is letting you down. You leave with a written plan, whether you work with us or not.</p></li>
+      <li class="step rv" style="--d:.28s"><div class="step-skip">The step everyone else skips</div><div class="step-row"><span class="step-n">2</span><h3>We build your Vault.</h3></div><p>We gather your documents, information, rules and instructions in one place. You check it before any Agent uses it.</p></li>
+      <li class="step rv" style="--d:.36s"><div class="step-row"><span class="step-n">3</span><h3>Your Agents go to work.</h3></div><p>Email, filing, deadlines, invoices and posts, all drafted from your Vault.</p></li>
+      <li class="step rv" style="--d:.44s"><div class="step-row"><span class="step-n">4</span><h3>You approve.</h3></div><p>Every draft waits for you. Nothing goes out without your say-so.</p></li>
+    </ol>
+  </div>
+  <p class="how-foot rv-o">If something new contradicts what's in your Vault, your Agents flag it instead of guessing.</p>
+  <div class="edge edge-t"></div><div class="edge edge-b"></div>
+</section>
+
+<!-- ============================== OFFERS ============================== -->
+<section class="sec offers" id="offers" data-sec="offers">
+  <div class="layer glow"></div>
+  <h2 class="rv">Our Packages</h2>
+  <div class="offers-grid">
+    <div class="offer offer-key rv" style="--d:.08s">
+      <h3>Vault Setup + Agents</h3>
+      <div class="offer-price">Starting at $495<span class="offer-opt">Optional: $45/month tech support</span></div>
+      <p>We set up your Vault and give access to our growing roster of Agents.</p>
+      <ul>
+        <li>Your Vault, built from your documents and rules, verified by you</li>
+        <li><strong>Email Agent</strong>: sorts, flags and drafts</li>
+        <li><strong>Filing Agent</strong>: files every attachment where it belongs</li>
+        <li><strong>Cashflow Manager</strong>: tracks what's owed and drafts reminders</li>
+        <li>More Agents as your business grows</li>
+      </ul>
+    </div>
+    <div class="offer rv" style="--d:.16s">
+      <h3>Marketing Package</h3>
+      <div class="offer-price">Priced after a call</div>
+      <p>We run your social media and your Google Business profile.</p>
+      <ul>
+        <li><strong>Social Media Agent</strong>: drafts your posts every week</li>
+        <li><strong>Clip Creator</strong>: turns your videos into short clips</li>
+        <li><strong>Google Business Agent</strong>: keeps your listing updated and drafts replies</li>
+        <li><strong>SMS Agent:</strong> increases outreach via texting curated to your business</li>
+        <li>You approve it all before it goes up</li>
+      </ul>
+    </div>
+  </div>
+  <div class="offers-cta rv" style="--d:.24s">
+    <p>Your exact plan comes out of your free audit.</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform" target="_blank" rel="noopener">Book My Free Audit<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="edge edge-t"></div><div class="edge edge-b"></div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="sec faq" id="faq" data-sec="faq">
+  <div class="layer glow"></div>
+  <div class="faq-in">
+    <h2 class="rv">FAQs</h2>
+    <div class="faq-list">
+      <details name="faq"><summary>I already use ChatGPT. Why do I need this?</summary><p>ChatGPT is a smart assistant that knows nothing about your business, and it forgets what you tell it. AI Office gives AI a Vault with your information, rules and instructions, then builds Agents that work from it every day. You approve everything before it goes out.</p></details>
+      <details name="faq"><summary>What is a Vault?</summary><p>Your Vault is your business's information, rules and instructions, organized in one place in your own accounts. Your Agents read it before they do anything. When something changes, you update the Vault once and every Agent follows.</p></details>
+      <details name="faq"><summary>How is this different from other AI agent companies?</summary><p>Most companies start with Agents. We start with your Vault. Agents without your business behind them guess and make things up (that's what people mean by AI "hallucinations"). Ours work from your verified information and show where each answer came from.</p></details>
+      <details name="faq"><summary>What does it cost?</summary><p>Vault Setup with your first Agents starts at $495, with optional tech support at $45 a month. The Marketing Package is priced after a call, once we know what your business needs.</p></details>
+      <details name="faq"><summary>Will the AI send something to a customer without me seeing it?</summary><p>No. Every email, filing note, reminder and post waits for your approval. Nothing goes out until you approve it.</p></details>
+      <details name="faq"><summary>What if the AI gets something wrong?</summary><p>Your Agents work only from your Vault and show where each answer came from. If something new contradicts the Vault, they flag it. And you review everything before it goes anywhere.</p></details>
+      <details name="faq"><summary>Where does my business information live?</summary><p>Your Vault is kept in your own accounts, and you decide who can see it. We'll go over exactly where it lives on your audit call.</p></details>
+      <details name="faq"><summary>Will this replace my staff?</summary><p>It takes the repetitive work off their desks: sorting, filing, reminders and first drafts. Your people get time back for customers and the work that grows the business.</p></details>
+      <details name="faq"><summary>Do I need to be good with technology?</summary><p>No. We build it, set it up and show your team how to use it. If you can read an email and click approve, you can run your AI Office.</p></details>
+      <details name="faq"><summary>Will it work with the software we already use?</summary><p>We review your current tools during the free audit, and your written plan shows how the Agents fit around them.</p></details>
+      <details name="faq"><summary>How long does setup take?</summary><p>It depends on the size of your business and which Agents you need. You'll get a timeline in your written plan.</p></details>
+      <details name="faq"><summary>What kinds of businesses do you work with?</summary><p>Small businesses with too much email, too much paperwork and too few people. Law firms, medical practices, retailers and service companies all fit.</p></details>
+      <details name="faq"><summary>What about the rules in my industry?</summary><p>The judgment stays with you. The AI drafts, and a person on your team reviews and approves before anything reaches a customer, a regulator or the public.</p></details>
+    </div>
+    <button type="button" class="faq-more" hidden>More questions</button>
+  </div>
+  <div class="edge edge-t"></div><div class="edge edge-b"></div>
+</section>
+
+<!-- ============================== CLOSING ============================== -->
+<section class="sec closing" id="book" data-sec="closing">
+  <div class="photo closing-photo"><picture><source media="(min-width:1024px)" type="image/webp" srcset="assets/images/closing-desktop.webp"><source media="(min-width:1024px)" srcset="assets/images/closing-desktop.jpg"><source type="image/webp" srcset="assets/images/closing-mobile.webp"><img src="assets/images/closing-mobile.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+  <div class="layer closing-l1"></div><div class="layer glow"></div>
+  <div class="closing-in rv">
+    <h2>Let me show you what AI Office can do for you</h2>
+    <p>One free call, about an hour. We'll look at how you use AI today and where it's letting you down. You leave with a written plan, whether you work with us or not.</p>
+    <div class="closing-cta">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform" target="_blank" rel="noopener">Book My Free Audit<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="closing-micro">Free · 1 hour · No obligation</div>
+    </div>
+  </div>
+  <div class="edge edge-t"></div><div class="edge edge-b"></div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="brand footer-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="9" height="9" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/><rect x="13" y="2" width="9" height="9" rx="2.5" fill="#2D8EFF"/><rect x="2" y="13" width="9" height="9" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/><rect x="13" y="13" width="9" height="9" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/></svg>AI Office Company</div>
+      <p class="footer-tag">AI Office. Add the power of AI to your business.</p>
+    </div>
+    <div>
+      <p class="footer-h">Contact Us</p>
+      <a class="ft-link" href="tel:+15045216997"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(504) 521-6997</a>
+      <a class="ft-link" href="mailto:info@aiofficecompany.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@aiofficecompany.com</a>
+    </div>
+    <div>
+      <p class="footer-h">Follow us</p>
+      <div class="ft-socials">
+        <a class="ft-social" href="https://www.linkedin.com/company/aiofficecompany/" target="_blank" rel="noopener" aria-label="AI Office Company on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a class="ft-social" href="https://www.facebook.com/aiofficecompany" target="_blank" rel="noopener" aria-label="AI Office Company on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a class="ft-social" href="https://www.instagram.com/aiofficecompany" target="_blank" rel="noopener" aria-label="AI Office Company on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a>
       </div>
     </div>
   </div>
+  <div class="footer-bottom">© 2026 AI Office Company · Photos courtesy of Unsplash</div>
+</footer>
 
-  <!-- ============================================================
-       HOW IT WORKS
-  ============================================================ -->
-  <section id="how-it-works" aria-labelledby="how-heading">
-    <div class="container">
-      <h2 id="how-heading" class="section-heading">How it works</h2>
-
-      <div class="how-steps">
-        <div class="step">
-          <div class="step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6L15 12l-3-3z"/>
-            </svg>
-          </div>
-          <div class="step-copy">
-            <div class="step-title">1. We build it.</div>
-            <p class="step-desc">One conversation. We map out where AI can save your firm the most time.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 21v-7m0-4V3m8 18v-9m0-4V3m8 18v-5m0-4V3M2 14h4m4-6h4m4 6h4"/>
-            </svg>
-          </div>
-          <div class="step-copy">
-            <div class="step-title">2. We set it up.</div>
-            <p class="step-desc">We configure everything and test it before you ever touch it.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="9" cy="8" r="3"/>
-              <path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5.2a3 3 0 0 1 0 5.6M18 15h1a3 3 0 0 1 3 3v3"/>
-            </svg>
-          </div>
-          <div class="step-copy">
-            <div class="step-title">3. We train your team.</div>
-            <p class="step-desc">We train your staff and hand over clear instructions.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="7" width="18" height="14" rx="2"/>
-              <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/>
-            </svg>
-          </div>
-          <div class="step-copy">
-            <div class="step-title">4. You run your business.</div>
-            <p class="step-desc">Your team takes over, or we stay on as your Operator.</p>
-          </div>
-        </div>
-      </div>
-
-
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
-         class="btn"
-         target="_blank"
-         rel="noopener noreferrer">
-        Start with a FREE conversation
-      </a>
-      <p class="how-note">Give us an hour. No tech skills required. No obligation whatsoever.</p>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TRUST / WHY AI OFFICE COMPANY
-  ============================================================ -->
-  <section id="trust" aria-labelledby="trust-heading">
-    <div class="container">
-      <div class="trust-header">
-        <h2 id="trust-heading" class="section-heading">Why Choose AI Office Company?</h2>
-      </div>
-
-      <div class="trust-grid">
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <!-- Location pin -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-          <div class="trust-text">
-            <strong>Local, New Orleans-based</strong>
-            We know this market. We're here, not across the country.
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <!-- Building / small biz icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2"/>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-            </svg>
-          </div>
-          <div class="trust-text">
-            <strong>Built for small businesses</strong>
-            Not enterprise software, not DIY tools. Purpose-built for businesses like yours.
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <!-- Checkmark shield -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <polyline points="9 12 11 14 15 10"/>
-            </svg>
-          </div>
-          <div class="trust-text">
-            <strong>You approve everything</strong>
-            Nothing goes out without your say-so. The AI works. You decide.
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">
-            <!-- Handshake / ongoing -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <div class="trust-text">
-            <strong>We stay with you</strong>
-            Ongoing management included, not just a setup and goodbye.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       LEAD CAPTURE
-  ============================================================ -->
-  <section id="cta-section" aria-labelledby="cta-heading">
-    <div class="container" style="position: relative; z-index: 1;">
-      <h2 id="cta-heading" class="cta-heading">
-        Ready to see what an AI Office could look like for your business?
-      </h2>
-      <p class="cta-sub">One conversation. We will tell you exactly what is possible.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelwxgPQoNHog9On9Gfm08sV-nHhhvpwXgxcnyUw-kU88Uh2g/viewform"
-         class="btn"
-         target="_blank"
-         rel="noopener noreferrer"
-         style="font-size: 1.1rem; padding: 16px 36px;">
-        Book a Free Audit
-      </a>
-      <p class="cta-note">
-        Or email us directly at
-        <a href="mailto:info@aiofficecompany.com">info@aiofficecompany.com</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer id="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-name">AI Office Company</div>
-          <div class="footer-tagline">Creating AI Offices for small businesses in New Orleans.</div>
-          <div class="footer-links">
-            <a href="tel:+15045216997">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.08 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69a2 2 0 0 1 1.74 2.04z"/>
-              </svg>
-              (504) 521-6997
-            </a>
-          </div>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:info@aiofficecompany.com">
-            <!-- Email icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            info@aiofficecompany.com
-          </a>
-          <a href="https://www.linkedin.com/company/aiofficecompany/" target="_blank" rel="noopener noreferrer">
-            <!-- LinkedIn icon -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-            LinkedIn
-          </a>
-          <a href="https://www.youtube.com/@AIOfficecompany" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px;">
-          <!-- YouTube Icon -->
-          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-            <path d="M31.328 10.156c-.375-1.422-1.484-2.547-2.906-2.922C25.86 6.5 16 6.5 16 6.5s-9.859 0-12.422.734c-1.422.375-2.531 1.5-2.906 2.922C0 12.719 0 16 0 16s0 3.281.672 5.844c.375 1.422 1.484 2.547 2.906 2.922C6.141 25.5 16 25.5 16 25.5s9.86 0 12.422-.734c1.422-.375 2.531-1.5 2.906-2.922C32 19.281 32 16 32 16s0-3.281-.672-5.844zM12.8 20.312V11.688L20.8 16l-8 4.312z"/>
-          </svg>
-          YouTube
-        </a>
-                <a href="https://www.facebook.com/aiofficecompany" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px;">
-          <!-- Facebook Icon -->
-          <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor" aria-hidden="true">
-            <path d="M32 16a16 16 0 1 0-18.5 15.803V20.625h-4.054V16h4.054v-3.518c0-3.999 2.37-6.21 6.023-6.21 1.75 0 3.58.312 3.58.312v3.938h-2.017c-1.983 0-2.6 1.233-2.6 2.493V16h4.438l-.71 4.625h-3.728v11.178A16.004 16.004 0 0 0 32 16z"/>
-          </svg>
-          Facebook
-        </a>
-                <a href="https://www.instagram.com/aiofficecompany" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px;">
-        <!-- Instagram Icon -->
-        <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor" aria-hidden="true">
-          <path d="M16 2.877c4.273 0 4.781.016 6.465.094 1.56.071 2.406.331 2.97.551.746.29 1.28.636 1.839 1.196.56.559.905 1.093 1.196 1.839.22.563.48 1.41.551 2.97.078 1.684.094 2.191.094 6.465s-.016 4.781-.094 6.465c-.071 1.56-.331 2.406-.551 2.97a4.954 4.954 0 0 1-1.196 1.839 4.954 4.954 0 0 1-1.839 1.196c-.563.22-1.41.48-2.97.551-1.684.078-2.191.094-6.465.094s-4.781-.016-6.465-.094c-1.56-.071-2.406-.331-2.97-.551a4.954 4.954 0 0 1-1.839-1.196 4.954 4.954 0 0 1-1.196-1.839c-.22-.563-.48-1.41-.551-2.97C2.893 20.781 2.877 20.274 2.877 16s.016-4.781.094-6.465c.071-1.56.331-2.406.551-2.97.29-.746.636-1.28 1.196-1.839.559-.56 1.093-.905 1.839-1.196.563-.22 1.41-.48 2.97-.551 1.684-.078 2.191-.094 6.465-.094M16 0c-4.348 0-4.894.02-6.602.098-1.707.078-2.871.348-3.89.746A7.834 7.834 0 0 0 2.68 2.68a7.834 7.834 0 0 0-1.836 2.828c-.398 1.02-.668 2.18-.746 3.89C.018 11.106 0 11.652 0 16c0 4.348.02 4.894.098 6.602.078 1.707.348 2.871.746 3.89a7.834 7.834 0 0 0 1.836 2.828 7.834 7.834 0 0 0 2.828 1.836c1.02.398 2.18.668 3.89.746 1.707.078 2.508.098 6.602.098 4.094 0 4.894-.02 6.602-.098 1.707-.078 2.871-.348 3.89-.746a8.317 8.317 0 0 0 4.664-4.664c.398-1.02.668-2.18.746-3.89.078-1.707.098-2.508.098-6.602 0-4.094-.02-4.894-.098-6.602-.078-1.707-.348-2.871-.746-3.89a7.843 7.843 0 0 0-1.836-2.828A7.843 7.843 0 0 0 26.492.836c-1.02-.398-2.18-.668-3.89-.746C20.894.018 20.348 0 16 0zm0 7.782A8.218 8.218 0 1 0 24.218 16 8.217 8.217 0 0 0 16 7.782zm0 13.557A5.339 5.339 0 1 1 21.339 16 5.34 5.34 0 0 1 16 21.339zm8.543-15.343a1.922 1.922 0 1 0 1.922-1.922 1.921 1.921 0 0 0-1.922 1.922z"/>
-        </svg>
-        Instagram
-      </a>
-
-          
-        </div>
-      </div>
-      <div class="footer-copy">© 2026 AI Office Company. All rights reserved.</div>
-    </div>
-  </footer>
-
-  <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
-  <script>
-    // ----------------------------------------
-    // HERO CANVAS — soft particle / node effect
-    // ----------------------------------------
-    (function () {
-      const canvas = document.getElementById('hero-canvas');
-      const ctx = canvas.getContext('2d');
-      let W, H, particles, animId;
-
-      function resize() {
-        W = canvas.width = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-      }
-
-      function randBetween(a, b) { return a + Math.random() * (b - a); }
-
-      function initParticles() {
-        const count = Math.floor((W * H) / 14000);
-        particles = Array.from({ length: count }, () => ({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          r: randBetween(1, 2.8),
-          vx: randBetween(-0.18, 0.18),
-          vy: randBetween(-0.12, 0.12),
-          alpha: randBetween(0.25, 0.7),
-          pulse: Math.random() * Math.PI * 2,
-          pulseSpeed: randBetween(0.008, 0.022),
-        }));
-      }
-
-      function drawConnections() {
-        const threshold = 140;
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < threshold) {
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              const opacity = (1 - dist / threshold) * 0.12;
-              ctx.strokeStyle = `rgba(45,142,255,${opacity})`;
-              ctx.lineWidth = 0.8;
-              ctx.stroke();
-            }
-          }
-        }
-      }
-
-      function tick() {
-        ctx.clearRect(0, 0, W, H);
-        drawConnections();
-        for (const p of particles) {
-          p.x += p.vx;
-          p.y += p.vy;
-          p.pulse += p.pulseSpeed;
-          if (p.x < 0) p.x = W;
-          if (p.x > W) p.x = 0;
-          if (p.y < 0) p.y = H;
-          if (p.y > H) p.y = 0;
-          const a = p.alpha * (0.7 + 0.3 * Math.sin(p.pulse));
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(45,142,255,${a})`;
-          ctx.fill();
-        }
-        animId = requestAnimationFrame(tick);
-      }
-
-      function init() {
-        resize();
-        initParticles();
-        tick();
-      }
-
-      window.addEventListener('resize', () => {
-        cancelAnimationFrame(animId);
-        resize();
-        initParticles();
-        tick();
-      });
-
-      init();
-    })();
-
-    // ----------------------------------------
-    // MODAL SLIDESHOW
-    // ----------------------------------------
-    (function () {
-      const MODAL_IDS = ['modal-vault', 'modal-analytics', 'modal-operations'];
-
-      // Track current slide per modal
-      const state = {};
-      MODAL_IDS.forEach(id => { state[id] = 0; });
-
-      function getSlideCount(modal) {
-        return modal.querySelectorAll('.modal-slide').length;
-      }
-
-      function updateModal(modal, slideIndex) {
-        const slides = modal.querySelectorAll('.modal-slide');
-        const dots = modal.querySelectorAll('.modal-dot');
-        const prevBtn = modal.querySelector('.modal-prev');
-        const nextBtn = modal.querySelector('.modal-next');
-        const total = slides.length;
-
-        slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
-        dots.forEach((d, i) => d.classList.toggle('active', i === slideIndex));
-        prevBtn.disabled = slideIndex === 0;
-        nextBtn.disabled = slideIndex === total - 1;
-
-        state[modal.id] = slideIndex;
-      }
-
-      function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        if (!modal) return;
-        updateModal(modal, 0); // reset to first slide
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        // Focus close button for accessibility
-        const closeBtn = modal.querySelector('.modal-close');
-        if (closeBtn) closeBtn.focus();
-      }
-
-      function closeModal(modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      // Wire up cards
-      document.querySelectorAll('.info-card[data-modal]').forEach(card => {
-        const modalId = card.dataset.modal;
-        function trigger(e) {
-          if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
-          e.preventDefault();
-          openModal(modalId);
-        }
-        card.addEventListener('click', trigger);
-        card.addEventListener('keydown', trigger);
-      });
-
-      // Modal internals
-      MODAL_IDS.forEach(id => {
-        const modal = document.getElementById(id);
-        if (!modal) return;
-
-        // Close button
-        modal.querySelector('.modal-close').addEventListener('click', () => closeModal(modal));
-
-        // Overlay click to close
-        modal.addEventListener('click', e => {
-          if (e.target === modal) closeModal(modal);
-        });
-
-        // Prev / Next buttons
-        modal.querySelector('.modal-prev').addEventListener('click', () => {
-          updateModal(modal, Math.max(0, state[id] - 1));
-        });
-        modal.querySelector('.modal-next').addEventListener('click', () => {
-          updateModal(modal, Math.min(getSlideCount(modal) - 1, state[id] + 1));
-        });
-      });
-
-      // Keyboard: arrow keys + Escape
-      document.addEventListener('keydown', e => {
-        const activeModal = document.querySelector('.modal-overlay.active');
-        if (!activeModal) return;
-        if (e.key === 'Escape') {
-          closeModal(activeModal);
-        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-          const next = Math.min(getSlideCount(activeModal) - 1, state[activeModal.id] + 1);
-          updateModal(activeModal, next);
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-          const prev = Math.max(0, state[activeModal.id] - 1);
-          updateModal(activeModal, prev);
-        }
-      });
-
-      // Touch swipe support
-      let touchStartX = 0;
-      document.addEventListener('touchstart', e => {
-        touchStartX = e.touches[0].clientX;
-      }, { passive: true });
-
-      document.addEventListener('touchend', e => {
-        const activeModal = document.querySelector('.modal-overlay.active');
-        if (!activeModal) return;
-        const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) < 40) return;
-        if (diff > 0) {
-          // swipe left → next
-          updateModal(activeModal, Math.min(getSlideCount(activeModal) - 1, state[activeModal.id] + 1));
-        } else {
-          // swipe right → prev
-          updateModal(activeModal, Math.max(0, state[activeModal.id] - 1));
-        }
-      }, { passive: true });
-
-    })();
-  </script>
-
+</main>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
