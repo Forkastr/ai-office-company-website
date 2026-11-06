@@ -139,6 +139,26 @@
     });
   });
 
+  // ---- What AI can do: industry tabs (without JS every industry shows, stacked) -------------
+  var indTabs = $$('.ind-tab'), indPanels = $$('.ind-panel');
+  function showInd(n, focus) {
+    indTabs.forEach(function (t, i) {
+      var on = i === n;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      indPanels[i].hidden = !on;
+      if (on && focus) t.focus();
+    });
+  }
+  indTabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { showInd(i); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (k) { e.preventDefault(); showInd((i + k + indTabs.length) % indTabs.length, true); }
+    });
+  });
+  if (indTabs.length) showInd(0);
+
   // ---- scroll / resize wiring ----------------------------------------------------------------
   function onScroll() { if (!raf) raf = requestAnimationFrame(function () { parallax(); reveal(); }); }
   if (reduced) sections.forEach(function (s) { s.classList.add('is-seen'); });
