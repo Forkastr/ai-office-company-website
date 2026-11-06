@@ -85,8 +85,8 @@ main{display:flex;flex-direction:column;background:var(--navy)}
 .hero{position:relative;overflow:hidden;background:var(--navy);color:var(--white);padding-bottom:48px}
 .hero-photo{position:absolute;left:0;right:0;top:-10%;height:120%;will-change:transform}
 .hero-photo picture{display:block;width:100%;height:100%}
-/* the phone hero is very tall: the photo covers its top so the skyline sits behind the copy */
-.hero-photo img{display:block;width:100%;height:52%;object-fit:cover;object-position:22% 50%}
+/* the photo fills the whole hero (it no longer holds the tall Vault demo on phones) */
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:22% 50%}
 .hero-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(var(--navy-rgb),.72) 0%,rgba(var(--navy-rgb),.8) 40%,rgba(var(--navy-rgb),.45) 70%,rgba(var(--navy-rgb),.55) 100%)}
 .hero-fade2{display:none}
 .hero-fade{position:absolute;left:0;right:0;bottom:0;height:110px;pointer-events:none;background:linear-gradient(0deg,var(--navy),rgba(var(--navy-rgb),0))}
@@ -99,7 +99,7 @@ main{display:flex;flex-direction:column;background:var(--navy)}
 .nav-book{background:var(--white);color:var(--navy);padding:0 10px;height:44px;display:flex;align-items:center;white-space:nowrap;border-radius:8px;font-family:var(--font-serif);font-weight:600;font-size:14px;letter-spacing:.05em}
 .nav-book:hover{color:var(--navy);background:var(--gold)}
 
-.hero-grid{position:relative;z-index:1;padding:32px 20px 0;display:grid;grid-template-areas:"copy" "cta" "anim"}
+.hero-grid{position:relative;z-index:1;padding:32px 20px 0;display:grid;grid-template-areas:"copy" "cta"}
 .hero-copy{grid-area:copy}
 .hero-anim{grid-area:anim;margin-top:32px}
 .hero-cta{grid-area:cta;margin-top:24px}
@@ -115,7 +115,7 @@ main{display:flex;flex-direction:column;background:var(--navy)}
 .case{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border-radius:14px;border:1px solid rgba(var(--slate-rgb),.25);background:rgba(var(--navy-rgb),.85);color:var(--ice);transition:border-color .2s ease,transform .2s ease}
 .case:hover{color:var(--ice);border-color:rgba(var(--gold-rgb),.75);transform:translateY(-2px)}
 .case-t{font-family:var(--font-serif);font-size:20px;line-height:1.35;font-weight:600}
-.case-go{margin-top:auto;padding-top:4px;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-serif);font-size:17px;font-weight:600;letter-spacing:.03em;color:var(--gold)}
+.case-go{margin-top:auto;align-self:flex-end;padding-top:4px;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-serif);font-size:17px;font-weight:600;letter-spacing:.03em;color:var(--gold)}
 .case-go svg{transition:transform .2s ease}
 .case:hover .case-go svg{transform:translateX(4px)}
 .sig{display:flex;align-items:flex-start;gap:10px;margin-top:18px;font-size:13.5px;line-height:1.5}
@@ -468,6 +468,22 @@ main{display:flex;flex-direction:column;background:var(--navy)}
 .ft-social:hover{color:var(--white);border-color:var(--gold);background:rgba(var(--gold-rgb),.12)}
 .footer-bottom{margin-top:28px;padding-top:18px;border-top:1px solid rgba(var(--slate-rgb),.18);font-size:min(13px,3.2vw);white-space:nowrap}
 
+/* ================================ TABLET ================================ */
+/* 640-1023px (small laptop windows, tablets): keep the phone stacking, but the hero headline
+   stays on one line and the case boxes and buttons stop stretching edge to edge */
+@media (min-width:640px){
+  .btn{display:inline-flex}
+  .hero h1{white-space:nowrap;text-wrap:nowrap}
+}
+@media (min-width:640px) and (max-width:1023px){
+  .hero-grid{padding:48px 40px 0}
+  .hero h1{font-size:5.4vw}
+  .hero-tag{font-size:3.3vw}
+  .cases-q{margin-top:32px;font-size:22px}
+  .cases{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;max-width:760px}
+  .hero-cta{display:flex;align-items:center}
+}
+
 /* ================================ DESKTOP ================================ */
 @media (min-width:1024px){
   .btn{display:inline-flex;height:56px}
@@ -489,15 +505,17 @@ main{display:flex;flex-direction:column;background:var(--navy)}
   .nav-links a{color:var(--blush)}
   .nav-links a:hover{color:var(--white)}
   .nav-book{height:auto;padding:11px 18px;font-size:16px}
-  .hero-grid{height:928px;padding:0 100px 0 120px;grid-template-columns:minmax(0,1fr) 570px;column-gap:32px;grid-template-rows:.7fr auto auto 1.3fr;grid-template-areas:". anim" "copy anim" "cta anim" ". anim"}
+  /* one wide column; the right ~third stays open over the photo */
+  .hero-grid{height:928px;padding:0 120px;grid-template-columns:minmax(0,980px);grid-template-rows:.8fr auto auto 1.2fr;grid-template-areas:"." "copy" "cta" "."}
   .hero-anim{margin-top:0;align-self:center}
   .hero-eyebrow{margin-bottom:18px}
-  .hero h1{font-size:46px;line-height:1.15}
-  .hero-tag{font-size:32px;line-height:1.25;margin-top:14px}
-  .cases-q{margin-top:28px;font-size:24px}
-  .cases{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:14px;max-width:640px}
+  .hero h1{font-size:58px;line-height:1.12}
+  .hero-tag{font-size:36px;line-height:1.25;margin-top:18px}
+  .cases-q{margin-top:40px;font-size:26px}
+  .cases{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:16px;max-width:900px}
   .case{gap:10px;padding:20px}
-  .case-t{font-size:23px;line-height:1.4}
+  .case{padding:26px 28px}
+  .case-t{font-size:26px;line-height:1.35}
   .case-go{font-size:18px}
   .sig{align-items:center;gap:12px;margin-top:24px;font-size:15px}
   .sig::before{width:28px;margin-top:0}

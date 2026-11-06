@@ -24,16 +24,16 @@ ai-office-company-website/
 ## Pages and sections
 
 **Homepage (`/`)**
-1. **Hero:** "The AI Revolution is here." headline, two case cards with a gold "Click here" (Case 1 opens `/what-ai-can-do/`, Case 2 opens `/why-ai-isnt-working/`), founder line, and a looping demo (Vault drawers + chat) of four stories where a generic AI gets it wrong and the Vault fixes it.
+1. **Hero:** "The AI Revolution is here." headline, two case cards with a gold "Click here" (Case 1 opens `/what-ai-can-do/`, Case 2 opens `/why-ai-isnt-working/`), founder line and CTA. On desktop the copy is one wide column with the right side left open over the photo.
 2. **A day with your AI Office:** a live clock (7 AM–5 PM), task counter, the current task and a timeline.
 3. **Building Your AI Office:** four steps.
 4. **Our Packages:** Vault Setup + Agents (from $495, optional $45/month tech support) and the Marketing Package.
 5. **FAQs:** static `<details>` blocks; the same questions are in the FAQPage schema.
 6. **Closing CTA** and **footer** (contact, socials).
 
-**What AI Can Do (`/what-ai-can-do/`)**: six benefit tiles; "See it in your business" (gold divider, industry tabs, CTA); the Vault demo from the hero; footer.
+**What AI Can Do (`/what-ai-can-do/`)**: six benefit tiles; "See it in your business" (gold divider, industry tabs, CTA); footer.
 
-**Why AI Isn't Working (`/why-ai-isnt-working/`)**: the Without/With Vault comparison and the "What goes in your Vault" diagram; closing CTA; footer.
+**Why AI Isn't Working (`/why-ai-isnt-working/`)**: the Without/With Vault comparison and the "What goes in your Vault" diagram; the Vault demo (Vault drawers + chat, four stories where a generic AI gets it wrong and the Vault fixes it); closing CTA; footer.
 
 Nav, footer and the closing section are copied into each page (no build step), so change them in all three files. Subpages use root-relative paths (`/assets/...`).
 
@@ -51,7 +51,7 @@ Nav, footer and the closing section are copied into each page (no build step), s
 |---|---|
 | Any copy, prices, FAQ answers | `index.html` (also update the FAQPage / ProfessionalService JSON-LD in `<head>` if the facts change) |
 | Booking form link | the four `docs.google.com/forms/...` links in `index.html` |
-| Hero demo stories | the `.story` blocks in `index.html`; timing in `site.js` (`STEPS`, `HOLD`) |
+| Vault demo stories | the `.story` blocks in `why-ai-isnt-working/index.html`; timing in `site.js` (`STEPS`, `HOLD`) |
 | What AI Can Do tiles and industry tabs | `what-ai-can-do/index.html` (tab switching in `site.js`) |
 | "A day with your AI Office" tasks | `TASKS` in `site.js` (and the fallback row in `index.html`) |
 | Colours | tokens at the top of `assets/css/site.css` |
