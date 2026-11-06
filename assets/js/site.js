@@ -19,12 +19,14 @@
   fit();
   window.addEventListener('resize', fit);
 
-  // ---- hero demo: a generic AI gets it wrong twice, then works from the Vault ---------------
+  // ---- Vault demo (homepage hero, and the What AI Can Do page): a generic AI gets it wrong
+  //      twice, then works from the Vault. Paced slowly enough to read; after the first two
+  //      messages (question + wrong answer) it pauses an extra 1s before striking the answer.
   var anim = $('.hero-anim');
   var stories = $$('.story', anim), drawers = $$('.drawer', anim);
   var HUES = ['teal', 'amber', 'violet', 'coral'];  // one per story, tokens in site.css
   var FLAGS = ['q1', 'a1', 't1', 'q2', 't2', 'vault', 'open', 'chip'];
-  var STEPS = [470, 870, 1270, 1730, 2130, 2600, 3070, 3470], HOLD = 7470;  // finished chat stays ~4s before the next story
+  var STEPS = [940, 1740, 3540, 4460, 5260, 6200, 7140, 7940], HOLD = 12940;  // finished chat stays ~5s before the next story
   var timers = [];
 
   function setHero(sc, ph) {
@@ -41,15 +43,17 @@
     timers.push(setTimeout(function () { setHero(sc, 0); }, delay + HOLD));
     timers.push(setTimeout(function () { play((sc + 1) % 4, 0); }, delay + HOLD + 400));
   }
-  if (reduced) setHero(0, FLAGS.length);
-  else { setHero(0, 0); play(0, 600); }
+  if (anim) {
+    if (reduced) setHero(0, FLAGS.length);
+    else { setHero(0, 0); play(0, 600); }
+  }
 
-  // hero photo parallax
+  // hero photo parallax (homepage only)
   var photo = $('[data-parallax]');
   var raf = 0;
   function parallax() {
     raf = 0;
-    if (reduced) return;
+    if (reduced || !photo) return;
     var r = photo.parentElement.getBoundingClientRect();
     var y = Math.max(-r.height * 0.12, Math.min(r.height * 0.12, -r.top * 0.3));
     photo.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)';
@@ -110,7 +114,8 @@
     doneEl.textContent = done;
     if (now !== shown) { nowEl.innerHTML = taskRow(TASKS[now]); shown = now; }
   }
-  if (reduced) { day = 1.1; renderDay(); }
+  if (!agents) { /* not on this page */ }
+  else if (reduced) { day = 1.1; renderDay(); }
   else {
     renderDay();
     setInterval(function () {
@@ -125,7 +130,8 @@
   }
 
   // ---- FAQ: first three questions, then "More questions"; one answer open at a time -------
-  var faqList = $('.faq-list'), faqMore = $('.faq-more'), faqs = $$('details', faqList);
+  var faqList = $('.faq-list'), faqMore = $('.faq-more'), faqs = faqList ? $$('details', faqList) : [];
+  if (faqList) {
   faqList.classList.add('is-short');
   faqMore.hidden = false;
   faqMore.addEventListener('click', function () {
@@ -138,6 +144,27 @@
       if (d.open) faqs.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
+  }
+
+  // ---- What AI can do: industry tabs (without JS every industry shows, stacked) -------------
+  var indTabs = $$('.ind-tab'), indPanels = $$('.ind-panel');
+  function showInd(n, focus) {
+    indTabs.forEach(function (t, i) {
+      var on = i === n;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      indPanels[i].hidden = !on;
+      if (on && focus) t.focus();
+    });
+  }
+  indTabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { showInd(i); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (k) { e.preventDefault(); showInd((i + k + indTabs.length) % indTabs.length, true); }
+    });
+  });
+  if (indTabs.length) showInd(0);
 
   // ---- scroll / resize wiring ----------------------------------------------------------------
   function onScroll() { if (!raf) raf = requestAnimationFrame(function () { parallax(); reveal(); }); }
